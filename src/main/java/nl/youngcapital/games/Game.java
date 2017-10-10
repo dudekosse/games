@@ -9,14 +9,14 @@ public class Game {
 	@Id
 	@GeneratedValue
 	private Long id;
-	private typeGame typeGame;
+	private TypeGame typeGame;
 	private int timesPlayed;
 	private String user;
 	private int highScore;
 	
 	public Game () {}
 
-	public Game(Long id, nl.youngcapital.games.typeGame typeGame, int timesPlayed, String user, int highScore) {
+	public Game(Long id, nl.youngcapital.games.TypeGame typeGame, int timesPlayed, String user, int highScore) {
 		super();
 		this.id = id;
 		this.typeGame = typeGame;
@@ -45,11 +45,11 @@ public class Game {
 		this.id = id;
 	}
 
-	public typeGame getTypeGame() {
+	public TypeGame getTypeGame() {
 		return typeGame;
 	}
 
-	public void setTypeGame(typeGame typeGame) {
+	public void setTypeGame(TypeGame typeGame) {
 		this.typeGame = typeGame;
 	}
 
