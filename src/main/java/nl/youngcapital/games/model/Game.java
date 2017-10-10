@@ -1,4 +1,4 @@
-package nl.youngcapital.games;
+package nl.youngcapital.games.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,14 +9,14 @@ public class Game {
 	@Id
 	@GeneratedValue
 	private Long id;
-	private typeGame typeGame;
+	private TypeGame typeGame;
 	private int timesPlayed;
 	private String user;
 	private int highScore;
 	
 	public Game () {}
 
-	public Game(Long id, nl.youngcapital.games.typeGame typeGame, int timesPlayed, String user, int highScore) {
+	public Game(Long id, TypeGame typeGame, int timesPlayed, String user, int highScore) {
 		super();
 		this.id = id;
 		this.typeGame = typeGame;
@@ -33,23 +33,19 @@ public class Game {
 		this.user = user;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public typeGame getTypeGame() {
+	public TypeGame getTypeGame() {
 		return typeGame;
 	}
 
-	public void setTypeGame(typeGame typeGame) {
+	public void setTypeGame(TypeGame typeGame) {
 		this.typeGame = typeGame;
 	}
 
