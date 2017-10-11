@@ -54,7 +54,7 @@ public class Game {
 	}
 
 	public void setTimesPlayed(int timesPlayed) {
-		this.timesPlayed = timesPlayed;
+		this.timesPlayed =+timesPlayed;
 	}
 
 	public int getHighScore() {
@@ -62,7 +62,9 @@ public class Game {
 	}
 
 	public void setHighScore(int highScore) {
-		this.highScore = highScore;
-	}
+		if (highScore > this.highScore) {
+			this.highScore = highScore;
 	
+		}
+	}
 }

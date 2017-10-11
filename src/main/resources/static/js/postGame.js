@@ -1,9 +1,11 @@
-alert("Werkt");
-function postGame(){
-	var ent= document.getElementById("gamename").value;
-	var game = '{"name":"'+ent+'"}'; 
-    var xhttp = new XMLHttpRequest();
+function postGame(game,plays,wins,user){
+	//var ent= document.getElementById("gamename").value;
+	//var game = '{"name":"'+ent+'"}'; 
+    var gameInfo = '{"typeGame:" '+game+',"timesPlayed:" '+plays+',"user:"'+user+'"highscore"'+wins+'}';
 
+	var xhttp = new XMLHttpRequest();
+
+	console.log(gameInfo);
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 202) {
 			document.getElementById("outputserver").innerHTML = this.responseText;

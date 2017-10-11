@@ -1,5 +1,5 @@
 package nl.youngcapital.games.model;
 
 public enum TypeGame {
-    TETRIS, HANGMAN, CROSSES 
+    TETRIS, HANGMAN, TIC_TAC_TOE 
 }
