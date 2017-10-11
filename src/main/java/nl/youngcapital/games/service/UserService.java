@@ -17,4 +17,17 @@ public class UserService {
 		userrepository.save(user);
 		return user;
 	}
+	
+	public Iterable<User> userList() {
+		return userrepository.findAll();
+	}
+	
+	public boolean knownUser(Iterable<User> knownUsers, User user) {
+		boolean check = false; 
+		for (User knownUser : knownUsers) {
+			if (knownUser.getName().equals(user.getName()) && (knownUser.getPassword().equals(user.getPassword())))
+				check = true;
+		}
+		return check;
+	}
 }

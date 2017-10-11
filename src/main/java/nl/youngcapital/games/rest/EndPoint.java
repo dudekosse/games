@@ -35,15 +35,21 @@ public class EndPoint {
 	    return user;
 	}
 
+	@PostMapping("/userpost")
+	public boolean postUser(@RequestBody User user) {
+		System.out.println(user);
+		Iterable<User> users = userService.userList();
+		boolean check = userService.knownUser(users, user);
+		if (check == false) {
+			userService.add(user);
+			return true;
+		}
+		return false;
+	}
+	
 	@PostMapping("/gamepost")
 	public void postGame(@RequestBody Game game) {
 		System.out.println(game.getTypeGame());
 		gameService.add(game);
-	}
-	
-	@PostMapping("/userpost")
-	public void postUser(@RequestBody User user) {
-		System.out.println(user);
-		userService.add(user);
 	}
 }
