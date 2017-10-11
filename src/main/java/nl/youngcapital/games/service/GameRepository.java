@@ -5,11 +5,14 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 
 import nl.youngcapital.games.model.Game;
+import nl.youngcapital.games.model.TypeGame;
 
 @Component
 public interface GameRepository extends CrudRepository<Game, Long> {
-	@Query("UPDATE game SET high_score = \"id1\" where id1 > high_score, SET times_played + \"id2\\")
-	void updateTable(int id1, int id2);
+	@Query("UPDATE Game SET times_played = times_played + ?, high_score = ? where ? > high_score and type_game = ?")
+	void updateTable(int plays1, int hs1, int hs2, TypeGame typeGame);
 	
-	//@Query("select * from game where type_game == \"type"\")
+//	@Query("select times_played from Game where type_game = ?")
+//	int checkType(int type);
+
 }

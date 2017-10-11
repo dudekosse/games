@@ -49,9 +49,21 @@ public class EndPoint {
 	
 	@PostMapping("/gamepost")
 	public String postGame(@RequestBody Game game) {
-		//System.out.println(game.getTypeGame());
-		gameService.add(game);
-		return "redirect:/ticTacToe.html";
-	}
+		System.out.println("!!!!!!!!test!!!!!!!!!!!!!!");
 
+//		if (gameService.checkType(game.getTypeGame())) {
+//			System.out.println(gameService.checkType(game.getTypeGame()));
+//			System.out.println("!!!!!!!!!!!!!!!!!!!!!!!");
+//
+//			gameService.updateTable(game);			
+//		} else {
+//			System.out.println(gameService.checkType(game.getTypeGame()));
+
+			gameService.add(game);
+//		}
+		
+		//return "redirect:/ticTacToe.html";
+		return "xxxx";
+
+	}
 }

@@ -70,8 +70,10 @@ public class Game {
 
 	@Override
 	public String toString() {
-		return "Game [id=" + id + ", typeGame=" + typeGame + "]";
+		return "Game [id=" + id + ", typeGame=" + typeGame + ", timesPlayed=" + timesPlayed + ", user=" + user
+				+ ", highScore=" + highScore + "]";
 	}
+
 	
 	
 }

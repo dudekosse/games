@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import nl.youngcapital.games.model.Game;
+import nl.youngcapital.games.model.TypeGame;
 
 @Service
 @Transactional
@@ -18,6 +19,14 @@ public class GameService {
 		return game;
 	}
 	public void updateTable(Game game) {
-		gamerepository.updateTable(game.getHighScore(), game.getTimesPlayed());
+		gamerepository.updateTable(game.getTimesPlayed(), game.getHighScore(),game.getHighScore(),game.getTypeGame());
 	}
+//	public boolean checkType(int type) {
+//		if (gamerepository.checkType(type) != 0) {
+//			return true;
+//		} else {
+//			return false;
+//		}	
+//	}
+	
 }
