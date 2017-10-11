@@ -54,7 +54,7 @@ public class Game {
 	}
 
 	public void setTimesPlayed(int timesPlayed) {
-		this.timesPlayed =+timesPlayed;
+		this.timesPlayed = timesPlayed;
 	}
 
 	public int getHighScore() {

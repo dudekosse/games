@@ -17,4 +17,7 @@ public class GameService {
 		gamerepository.save(game);
 		return game;
 	}
+	public void updateTable(Game game) {
+		gamerepository.updateTable(game.getHighScore(), game.getTimesPlayed());
+	}
 }

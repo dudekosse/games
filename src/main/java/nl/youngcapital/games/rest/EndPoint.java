@@ -37,13 +37,14 @@ public class EndPoint {
 
 	@PostMapping("/gamepost")
 	public void postGame(@RequestBody Game game) {
-		System.out.println(game.getTypeGame());
+		//System.out.println(game.getTypeGame());
 		gameService.add(game);
 	}
 	
 	@PostMapping("/userpost")
-	public void postUser(@RequestBody User user) {
+	public String postUser(@RequestBody User user) {
 		System.out.println(user);
 		userService.add(user);
+		return "redirect:/ticTacToe.html";
 	}
 }

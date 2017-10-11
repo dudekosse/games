@@ -55,7 +55,7 @@ function endGame(status) {
 		reset();
 		alert("in end wins: " + wins)
 	} else {
-		postGame("tic_tack_toe",plays,wins,"test");
+		postGame("CROSSES",plays,wins,"test");
 		reset();
 	}
 }
