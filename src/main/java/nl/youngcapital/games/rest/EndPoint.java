@@ -13,7 +13,7 @@ import nl.youngcapital.games.service.GameService;
 import nl.youngcapital.games.service.UserService;
 
 @RestController
-public class GameEndPoint {
+public class EndPoint {
 	@Autowired
 	GameService gameService;
 	UserService userService;
