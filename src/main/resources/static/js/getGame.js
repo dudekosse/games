@@ -1,4 +1,3 @@
-alert("Werkt");
 function getGame(){
 	var xhttp = new XMLHttpRequest();
 	

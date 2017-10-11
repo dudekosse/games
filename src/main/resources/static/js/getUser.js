@@ -1,4 +1,3 @@
-alert("Werkt");
 function getUser(){
 	var xhttp = new XMLHttpRequest();
 	

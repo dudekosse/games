@@ -16,6 +16,8 @@ import nl.youngcapital.games.service.UserService;
 public class EndPoint {
 	@Autowired
 	GameService gameService;
+	
+	@Autowired
 	UserService userService;
 	
 	@GetMapping("/game")

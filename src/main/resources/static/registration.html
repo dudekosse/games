@@ -6,12 +6,12 @@
 <title>Form</title>
 <script>
 function postLogin(){
-	var name= document.getElementById("username").value;
-	var pw= document.getElementById("password").value;
-	var age= document.getElementById("age").value;
-	var country= document.getElementById("country").value;
+	var varname= document.getElementById("username").value;
+	var varpw= document.getElementById("password").value;
+	var varage= document.getElementById("age").value;
+	var varcountry= document.getElementById("country").value;
 	
-	var user = '{"username":"'+name+'"password":"'+pw+'"age":"'+age+'"country":"'+country'"}';
+	var user = {username: varname , password: varpw, age: varage, country: varcountry};
     var xhttp = new XMLHttpRequest();
 
 	xhttp.onreadystatechange = function() {
@@ -54,6 +54,8 @@ function postLogin(){
   </div>
   <button type="submit" onclick="postLogin()" class="btn btn-primary">Create account</button>
 </form>
+
+<div id="outputserver"></div>
 
 </body>
 </html>
