@@ -1,5 +1,5 @@
-alert("Werkt");
 function postUser(){
+	alert("hoi");
 	var ent= document.getElementById("username").value;
 	var user = '{"name":"'+ent+'"}'; 
     var xhttp = new XMLHttpRequest();

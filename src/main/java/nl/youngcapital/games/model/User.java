@@ -21,6 +21,11 @@ public class User {
 		super();
 	}
 	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + "]";
+	}
+
 	public User(Long id, String name, String password, int age, String country) {
 		super();
 		this.id = id;
