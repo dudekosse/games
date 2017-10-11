@@ -11,5 +11,5 @@ public interface GameRepository extends CrudRepository<Game, Long> {
 	@Query("UPDATE game SET high_score = \"id1\" where id1 > high_score, SET times_played + \"id2\\")
 	void updateTable(int id1, int id2);
 	
-	@Query("select * from game where type_game == \"type"\")
+	//@Query("select * from game where type_game == \"type"\")
 }

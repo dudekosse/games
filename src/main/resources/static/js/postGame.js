@@ -3,6 +3,7 @@ function postGame(game,plays,wins,user){
 	//var game = '{"name":"'+ent+'"}'; 
     var gameInfo = '{"typeGame": "'+game+'","timesPlayed": "'+plays+'","highScore":"'+wins+'","user":"'+user+'"}';
     console.log(gameInfo);
+
     console.log(gameInfo);
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {

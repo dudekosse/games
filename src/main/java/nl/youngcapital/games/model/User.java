@@ -1,5 +1,6 @@
 package nl.youngcapital.games.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,6 +10,8 @@ public class User {
 	@Id
 	@GeneratedValue
 	private Long id;
+	
+	@Column(unique=true)
 	private String name;
 	private String password;
 	private int age;
@@ -21,10 +24,15 @@ public class User {
 		super();
 	}
 	
+	
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + "]";
+		return "User [id=" + id + ", name=" + name + ", password=" + password + ", age=" + age + ", country=" + country
+				+ ", goldCoins=" + goldCoins + "]";
 	}
+
+
 
 	public User(Long id, String name, String password, int age, String country) {
 		super();

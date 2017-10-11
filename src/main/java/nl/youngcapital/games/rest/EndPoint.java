@@ -35,16 +35,23 @@ public class EndPoint {
 	    return user;
 	}
 
-	@PostMapping("/gamepost")
-	public void postGame(@RequestBody Game game) {
-		//System.out.println(game.getTypeGame());
-		gameService.add(game);
+	@PostMapping("/userpost")
+	public boolean postUser(@RequestBody User user) {
+		System.out.println(user);
+		Iterable<User> users = userService.userList();
+		boolean check = userService.knownUser(users, user);
+		if (check == false) {
+			userService.add(user);
+			return true;
+		}
+		return false;
 	}
 	
-	@PostMapping("/userpost")
-	public String postUser(@RequestBody User user) {
-		System.out.println(user);
-		userService.add(user);
+	@PostMapping("/gamepost")
+	public String postGame(@RequestBody Game game) {
+		//System.out.println(game.getTypeGame());
+		gameService.add(game);
 		return "redirect:/ticTacToe.html";
 	}
+
 }
