@@ -21,7 +21,7 @@ public class GameEndPoint {
 		gameService.test(game);
 		return game;
 	}
-	@GetMapping("/NewFile")
+	@GetMapping("/NewFile1")
 	public Game getGame2() {
 		Game game = new Game();
 		game.setTypeGame(TypeGame.HANGMAN);
@@ -30,9 +30,6 @@ public class GameEndPoint {
 	}
 	@PostMapping("/gamepost")
 	public void postEntiteit(@RequestBody Game game) {
-		System.out.print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println("Jojo");
-		System.out.println(game.getTypeGame());
 		gameService.test(game);
 	}
 }
