@@ -1,39 +1,13 @@
 <html>
-	<head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-		<script>
-	function getGame(){
-        			var xhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function() {
-  					if (this.readyState == 4 && this.status == 200) {
-    						document.getElementById("outputserver").innerHTML = this.responseText;
-  					}
-				};
-				
-        			xhttp.open("GET", "http://localhost:8082/game");
-		xhttp.setRequestHeader("Content-type", "application/json");
-		xhttp.send();
-	}
-	function verstuur(){
-    			var ent= document.getElementById("gamename").value;
-	var game = '{"name":"'+ent+'"}'; 
-    			var xhttp = new XMLHttpRequest();
-
-		xhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 202) {
-						document.getElementById("outputserver").innerHTML = this.responseText;
-
-			}
-		};
-    			xhttp.open("POST", "http://localhost:8082/gamepost", true);
-	xhttp.setRequestHeader("Content-type", "application/json");
-	xhttp.send(game);					
-
-}
-</script>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<script src="/main/js/getGame.js"></script>
+<script src="main/js/postGame.js"></script>
+<script src="../js/getUser.js"></script>
+<script src="../postser.js"></script>
 </head>
 <body>		
-		<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-3">Welkom</h1>
     <p class="lead">Op deze website kun je games spelen en gold coins verdienen.</p>
@@ -42,8 +16,11 @@
 
 <input type="text" id="gamename" value="gametest"><br>
 <button type="submit" id="buttoninput" onclick="getGame()" class="btn btn-primary">Get game</button>
-<button type="button" id="buttoninput" onclick="verstuur()" class="btn btn-primary">Post game</button>
+<button type="button" id="buttoninput" onclick="postGame()" class="btn btn-primary">Post game</button>
+<button type="submit" id="buttoninput" onclick="getUser()" class="btn btn-primary">Get user</button>
+<button type="button" id="buttoninput" onclick="postUser()" class="btn btn-primary">Post user</button>
+
 
 <div id="outputserver"></div>
-	</body>
+</body>
 </html>

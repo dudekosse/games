@@ -8,31 +8,39 @@ import org.springframework.web.bind.annotation.RestController;
 
 import nl.youngcapital.games.model.Game;
 import nl.youngcapital.games.model.TypeGame;
+import nl.youngcapital.games.model.User;
 import nl.youngcapital.games.service.GameService;
+import nl.youngcapital.games.service.UserService;
 
 @RestController
 public class GameEndPoint {
 	@Autowired
 	GameService gameService;
+	UserService userService;
 	
 	@GetMapping("/game")
 	public Game getGame() {
 		Game game = new Game();
-		gameService.test(game);
-		return game;
-	}
-	@GetMapping("/NewFile")
-	public Game getGame2() {
-		Game game = new Game();
 		game.setTypeGame(TypeGame.HANGMAN);
-		gameService.test(game);
+		gameService.add(game);
 		return game;
 	}
+	
+	@GetMapping("/user")
+	public User getUser() {
+		User user = new User();
+		userService.add(user);
+	    return user;
+	}
+
 	@PostMapping("/gamepost")
-	public void postEntiteit(@RequestBody Game game) {
-		System.out.print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println("Jojo");
+	public void postGame(@RequestBody Game game) {
 		System.out.println(game.getTypeGame());
-		gameService.test(game);
+		gameService.add(game);
+	}
+	
+	@PostMapping("/userpost")
+	public void postUser(@RequestBody User user) {
+		userService.add(user);
 	}
 }
