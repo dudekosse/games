@@ -43,6 +43,7 @@ public class EndPoint {
 	
 	@PostMapping("/userpost")
 	public void postUser(@RequestBody User user) {
+		System.out.println(user);
 		userService.add(user);
 	}
 }

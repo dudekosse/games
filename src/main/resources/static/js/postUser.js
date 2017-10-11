@@ -1,8 +1,12 @@
 function postUser(){
-	alert("hoi");
-	var ent= document.getElementById("username").value;
-	var user = '{"name":"'+ent+'"}'; 
-    var xhttp = new XMLHttpRequest();
+	var varname= document.getElementById("username").value;
+	var varpw= document.getElementById("password").value;
+	var varage= document.getElementById("age").value;
+	var varcountry= document.getElementById("country").value;
+    
+	var user = {username: varname , password: varpw, age: varage, country: varcountry};
+	console.log(user);
+	var xhttp = new XMLHttpRequest();
 
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 202) {

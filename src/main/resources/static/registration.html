@@ -4,27 +4,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 <title>Form</title>
-<script>
-function postLogin(){
-	var varname= document.getElementById("username").value;
-	var varpw= document.getElementById("password").value;
-	var varage= document.getElementById("age").value;
-	var varcountry= document.getElementById("country").value;
-	
-	var user = {username: varname , password: varpw, age: varage, country: varcountry};
-    var xhttp = new XMLHttpRequest();
-
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 202) {
-			document.getElementById("outputserver").innerHTML = this.responseText;
-		}
-	};
-
-	xhttp.open("POST", "http://localhost:8082/userpost", true);
-	xhttp.setRequestHeader("Content-type", "application/json");
-	xhttp.send(user);					
-}
-</script>
+<script src="../js/postUser.js"></script>
 </head>
 <body>
 
@@ -52,7 +32,7 @@ function postLogin(){
     <label for="country">Country</label>
     <input type="text" class="form-control" id="country" placeholder="Enter country" required>
   </div>
-  <button type="submit" onclick="postLogin()" class="btn btn-primary">Create account</button>
+  <button type="submit" onclick="postUser()" class="btn btn-primary">Create account</button>
 </form>
 
 <div id="outputserver"></div>
