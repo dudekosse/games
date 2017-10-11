@@ -10,9 +10,10 @@ public class User {
 	@GeneratedValue
 	private Long id;
 	private String name;
+	private String password;
 	private int age;
 	private String country;
-	private int goldCoins;
+	private int goldCoins = 10;
 	//private Map<TypeGame,Integer> gamesPlayed = new HashMap<TypeGame,Integer>();
 	//private Map<TypeGame,Integer> highScores = new HashMap<TypeGame,Integer>();		
 	
@@ -20,26 +21,15 @@ public class User {
 		super();
 	}
 	
-//	public User(Long id, String name, int age, String country, int goldCoins, Map<TypeGame, Integer> gamesPlayed,
-//			Map<TypeGame, Integer> highScores) {
-//		super();
-//		this.id = id;
-//		this.name = name;
-//		this.age = age;
-//		this.country = country;
-//		this.goldCoins = goldCoins;
-//		this.gamesPlayed = gamesPlayed;
-//		this.highScores = highScores;
-//	}
-	
-	public User(Long id, String name, int age, String country, int goldCoins) {
+	public User(Long id, String name, String password, int age, String country) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.password = password;
 		this.age = age;
 		this.country = country;
-		this.goldCoins = goldCoins;
 	}
+
 	public Long getId() {
 		return id;
 	}
@@ -52,6 +42,15 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public int getAge() {
 		return age;
 	}
