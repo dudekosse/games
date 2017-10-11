@@ -5,7 +5,7 @@ function postGame(game,plays,wins,user){
 
 	var xhttp = new XMLHttpRequest();
 
-	console.log(gameInfo);
+	alert(gameInfo);
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 202) {
 			document.getElementById("outputserver").innerHTML = this.responseText;
