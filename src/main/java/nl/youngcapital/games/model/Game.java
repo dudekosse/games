@@ -1,6 +1,8 @@
 package nl.youngcapital.games.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -44,7 +46,8 @@ public class Game {
 	public TypeGame getTypeGame() {
 		return typeGame;
 	}
-
+	
+	@Enumerated(EnumType.ORDINAL)
 	public void setTypeGame(TypeGame typeGame) {
 		this.typeGame = typeGame;
 	}
