@@ -1,5 +1,7 @@
 package nl.youngcapital.games.service;
 
+import java.util.ArrayList;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,15 +19,26 @@ public class GameService {
 		gamerepository.save(game);
 		return game;
 	}
-	public void updateTable(Game game) {
-		gamerepository.updateTable(game.getTimesPlayed(), game.getHighScore(),game.getHighScore(),game.getTypeGame());
-	}
-//	public boolean checkType(int type) {
-//		if (gamerepository.checkType(type) != 0) {
-//			return true;
-//		} else {
-//			return false;
-//		}	
+//	public void updateTable(Game game) {
+//		gamerepository.updateTable(game.getTimesPlayed(), game.getHighScore(),game.getHighScore(),game.getTypeGame());
 //	}
+	public void updateTable(Game game) {
+		gamerepository.updateTable(game.getTimesPlayed(),game.getTypeGame().ordinal());
+	}
 	
+	public void updateHighscore(Game game) {
+		gamerepository.updateHighscore(game.getHighScore(),game.getHighScore(), game.getTypeGame().ordinal());
+	}
+	
+	public boolean checkType(int type) {
+		if (gamerepository.checkType(type).size() > 0) {
+			return true;
+		} else {
+			return false;
+		}	
+	}
+//	public ArrayList<TypeGame> checkType(TypeGame type) {
+//		return gamerepository.checkType(type);
+//	}
+
 }
