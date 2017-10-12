@@ -49,13 +49,20 @@ sqr9 = document.tic.sqr9.value
 }
 
 function endGame(status) {
-	plays +=1;
 	if (status == "W") {
+		plays +=1;
 		wins +=1;
 		reset();
 		alert("in end wins: " + wins)
 	} else {
+		if (plays == 0) {
+			plays = 1;
+		} else {
+			plays+=1;
+		}
+		
 		postGame("TIC_TAC_TOE",plays,wins,"test");
+		plays = 0;
 		reset();
 	}
 }
