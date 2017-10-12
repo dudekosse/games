@@ -16,7 +16,8 @@ function postLogin() {
 			login(bool);
 		}
 	};
-	xhttp.open("POST", "http://localhost:8082/loginpost", true);
+	alert("test!!!");
+	xhttp.open("POST", "http://localhost:8082/login", true);
 	xhttp.setRequestHeader("Content-type", "application/json");
 	xhttp.send(user);
 }
@@ -24,7 +25,7 @@ function postLogin() {
 function login(bool) {
 	if (bool == true){
 		alert("Login succesfull!")
-		}
-	else {
+	} else {
 		alert("Username and password combination invalid");
 	}
+}
