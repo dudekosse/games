@@ -25,7 +25,7 @@ public class UserService {
 	public boolean knownUser(Iterable<User> knownUsers, User user) {
 		boolean check = false; 
 		for (User knownUser : knownUsers) {
-			if (knownUser.getName().equals(user.getName()) && (knownUser.getPassword().equals(user.getPassword())))
+			if (knownUser.getUsername().equals(user.getUsername()) && (knownUser.getPassword().equals(user.getPassword())))
 				check = true;
 		}
 		return check;

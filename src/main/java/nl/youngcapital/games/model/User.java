@@ -12,7 +12,7 @@ public class User {
 	private Long id;
 	
 	@Column(unique=true)
-	private String name;
+	private String username;
 	private String password;
 	private int age;
 	private String country;
@@ -24,20 +24,17 @@ public class User {
 		super();
 	}
 	
-	
-
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", password=" + password + ", age=" + age + ", country=" + country
-				+ ", goldCoins=" + goldCoins + "]";
-	}
-
-
-
-	public User(Long id, String name, String password, int age, String country) {
+	public User(Long id, String username, String password) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.username = username;
+		this.password = password;
+	}
+
+	public User(Long id, String username, String password, int age, String country) {
+		super();
+		this.id = id;
+		this.username = username;
 		this.password = password;
 		this.age = age;
 		this.country = country;
@@ -49,11 +46,11 @@ public class User {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 	public String getPassword() {
@@ -95,5 +92,9 @@ public class User {
 //		this.highScores = highScores;
 //	}
 	
-	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", age=" + age + ", country=" + country
+				+ ", goldCoins=" + goldCoins + "]";
+	}
 }

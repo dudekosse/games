@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import nl.youngcapital.games.model.Game;
-import nl.youngcapital.games.model.TypeGame;
 
 @Service
 @Transactional

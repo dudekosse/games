@@ -28,14 +28,14 @@ public class EndPoint {
 		return game;
 	}
 	
-	@GetMapping("/user")
+	@GetMapping("/register")
 	public User getUser() {
 		User user = new User();
 		userService.add(user);
 	    return user;
 	}
 
-	@PostMapping("/userpost")
+	@PostMapping("/registerpost")
 	public boolean postUser(@RequestBody User user) {
 		System.out.println(user);
 		Iterable<User> users = userService.userList();
@@ -43,8 +43,19 @@ public class EndPoint {
 		if (check == false) {
 			userService.add(user);
 			return true;
-		}
-		return false;
+		} return false;
+	}
+	
+	@GetMapping("/login")
+	public Iterable<User> getLogin() {
+		return userService.userList();
+	}
+	
+	@PostMapping("/loginpost")
+	public boolean postLogin(@RequestBody User user) {
+		Iterable<User> users = userService.userList();
+		boolean check = userService.knownUser(users, user);
+		return check;
 	}
 	
 	@PostMapping("/gamepost")
