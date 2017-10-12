@@ -49,20 +49,15 @@ sqr9 = document.tic.sqr9.value
 }
 
 function endGame(status) {
+	plays+=1	
 	if (status == "W") {
-		plays +=1;
 		wins +=1;
 		reset();
 		alert("in end wins: " + wins)
-	} else {
-		if (plays == 0) {
-			plays = 1;
-		} else {
-			plays+=1;
-		}
-		
+	} else {		
 		postGame("TIC_TAC_TOE",plays,wins,"test");
 		plays = 0;
+		wins = 0;
 		reset();
 	}
 }
@@ -73,8 +68,6 @@ function check()
   if(sqr1 == " X " && sqr2 == " X " && sqr3 == " X ")
   {
 	  endGame(status)
-//    alert("You Win!")
-//    reset()
   } 
   else if(sqr4 == " X " && sqr5 == " X " && sqr6 == " X ")
   {
@@ -151,8 +144,10 @@ function check2()
   } 
   else if(sqr7 == " O " && sqr8 == " O " && sqr9 == " O ")
   {
-    alert("You Lose!")
-    reset()
+//    alert("You Lose!")
+//    reset()
+	  endGame(status)
+	  
   }
   else if(sqr1 == " O " && sqr5 == " O " && sqr9 == " O ")
   {
