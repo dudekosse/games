@@ -16,10 +16,12 @@ function postUser(){
 	var month= document.getElementById("month").value;
 	var year = document.getElementById("year").value;
 	var datestring = String(month)+"-"+String(day)+"-"+String(year);
-	var age = calcAge(datestring)
+	//var age = calcAge(datestring)
+	var age = 24;
 	var country= document.getElementById("country").value;
 	
 	var user = '{"username": "'+username+'","password": "'+password+'","age":"'+age+'","country":"'+country+'"}';
+	alert(user);
 	var xhttp = new XMLHttpRequest();
 	
 	xhttp.onreadystatechange = function() {

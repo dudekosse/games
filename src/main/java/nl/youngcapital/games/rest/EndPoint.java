@@ -37,7 +37,6 @@ public class EndPoint {
 
 	@PostMapping("/registerpost")
 	public boolean postUser(@RequestBody User user) {
-		System.out.println(user);
 		Iterable<User> users = userService.userList();
 		boolean check = userService.knownUser(users, user);
 		if (check == false) {
