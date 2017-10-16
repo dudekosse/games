@@ -1,0 +1,35 @@
+<html>
+   <head>
+       <script src="demojs.js"></script>
+       <script>
+           function voorbeeldFunctie(){
+               var body = document.getElementsByTagName("body");
+                var knop =  document.createElement("button");
+                knop.innerHTML = "knopje";
+                knop.addEventListener("click", nieuweFunctie);
+                var difje = document.getElementById("output");
+                difje.appendChild(knop);
+
+                var knop = body[0].children[0];
+               var cln = knop.cloneNode(true);
+              
+                difje.appendChild(cln);
+           }
+           function nieuweFunctie(){
+               alert("in de nieuwe functie");
+           }
+       </script>
+   </head>
+   <body id="mijnBody">
+       Ik doe het
+       <input type="text" name="fname">
+       <input type="button" value="druk hier maar" onclick="voorbeeldFunctie()">
+       <div id=output></div>
+   </body>
+</html>
+
+
+
+
+
+
