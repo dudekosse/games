@@ -15,9 +15,6 @@ import nl.youngcapital.games.model.TypeGame;
 @Component
 public interface GameRepository extends CrudRepository<Game, Long> {
 	
-	//@Modifying	
-	//@Query("UPDATE Game SET times_played = times_played + ?, high_score = ? where ? > high_score and type_game = ?")
-
 	@Transactional
 	@Modifying
 	@Query("UPDATE Game SET times_played = times_played + ? where type_game = ?")

@@ -1,9 +1,9 @@
 function postGame(game,plays,wins,user){
     curUser = checkCookie();
-    //var curUser = checkCookie().length > 0 ? checkCookie() : "anonymous";
-    console.log(curUser);
-	var gameInfo = '{"typeGame": "'+game+'","timesPlayed": "'+plays+'","highScore":"'+wins+'","user":"'+user+'"}';
+    var curUser = checkCookie().length > 0 ? checkCookie() : "anonymous";
 
+    var gameInfo = '{"typeGame": "'+game+'","timesPlayed": "'+plays+'","highScore":"'+wins+'","user":"'+curUser+'"}';
+    console.log(gameInfo);
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 202) {

@@ -19,21 +19,6 @@ public class EndPoint {
 	
 	@Autowired
 	UserService userService;
-	
-	@GetMapping("/game")
-	public Game getGame() {
-		Game game = new Game();
-		game.setTypeGame(TypeGame.HANGMAN);
-		gameService.add(game);
-		return game;
-	}
-	
-	@GetMapping("/register")
-	public User getUser() {
-		User user = new User();
-		userService.add(user);
-	    return user;
-	}
 
 	@PostMapping("/registerpost")
 	public boolean postUser(@RequestBody User user) {
@@ -43,11 +28,6 @@ public class EndPoint {
 			userService.add(user);
 			return true;
 		} return false;
-	}
-	
-	@GetMapping("/login")
-	public Iterable<User> getLogin() {
-		return userService.userList();
 	}
 	
 	@PostMapping("/loginpost")
@@ -63,12 +43,9 @@ public class EndPoint {
 			gameService.updateTable(game);		
 			gameService.updateHighscore(game);
 		} else {
-			System.out.println(gameService.checkType(game.getTypeGame().ordinal()));
 			gameService.add(game);
 		}
 		
 		return "redirect:/ticTacToe.html";
-		//return "xxxx";
-
 	}
 }

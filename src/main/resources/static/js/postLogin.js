@@ -10,9 +10,9 @@ function postLogin() {
 		if (this.readyState == 4 && this.status == 200) {
 			var check = this.responseText;
 			var bool = JSON.parse(check);
-			login(bool, user);
+			login(bool, username);
 			if (check) {
-				cookieFactory("username",user.name,365);
+				createCookie("username",username,365);
 			}
 		}
 	};
@@ -21,9 +21,10 @@ function postLogin() {
 	xhttp.send(user);
 }
 		
-function login(bool, user) {
+function login(bool, username) {
 	if (bool == true){
-		alert("Login succesfull! Welcome "+ user.name)
+
+		alert("Login succesfull! Welcome "+ username)
 	} else {
 		alert("Username and password combination invalid");
 	}
