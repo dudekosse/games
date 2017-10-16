@@ -52,7 +52,6 @@ public class EndPoint {
 	
 	@PostMapping("/loginpost")
 	public boolean postLogin(@RequestBody User user) {
-		System.out.println(user.getUsername());
 		Iterable<User> users = userService.userList();
 		boolean check = userService.knownUser(users, user);
 		return check;
