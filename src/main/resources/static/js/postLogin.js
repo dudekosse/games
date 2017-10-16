@@ -19,6 +19,7 @@ function postLogin() {
 	xhttp.open("POST", "http://localhost:8082/loginpost", true);
 	xhttp.setRequestHeader("Content-type", "application/json");
 	xhttp.send(user);
+	location.href = "success.html"
 }
 		
 function login(bool, username) {
