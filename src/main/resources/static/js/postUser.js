@@ -10,15 +10,15 @@ function calcAge(dateofbirth) {
 }
 
 function postUser(){
-	var username= document.getElementById("username").value;
-	var password= document.getElementById("password").value;
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
 	var day = document.getElementById("day").value;
-	var month= document.getElementById("month").value;
+	var month = document.getElementById("month").value;
 	var year = document.getElementById("year").value;
 	var datestring = String(month)+"-"+String(day)+"-"+String(year);
 	//var age = calcAge(datestring)
 	var age = 24;
-	var country= document.getElementById("country").value;
+	var country = document.getElementById("country").value;
 	
 	var user = '{"username": "'+username+'","password": "'+password+'","age":"'+age+'","country":"'+country+'"}';
 	alert(user);

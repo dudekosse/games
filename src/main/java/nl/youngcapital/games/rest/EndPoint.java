@@ -1,13 +1,11 @@
 package nl.youngcapital.games.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import nl.youngcapital.games.model.Game;
-import nl.youngcapital.games.model.TypeGame;
 import nl.youngcapital.games.model.User;
 import nl.youngcapital.games.service.GameService;
 import nl.youngcapital.games.service.UserService;
