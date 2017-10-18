@@ -1,11 +1,10 @@
 /**
  * 
  */
-function createCookie(cname, cvalue, exdays) {
-	  var d = new Date();
-	    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-	    var expires = "expires="+d.toUTCString();
-	    document.cookie = name + "=" + cvalue + ";" + expires + ";path=/";
+function createCookie(cname, cvalue) {
+
+	    //var expires = "expires="+d.toUTCString();
+	    document.cookie = cname + "=" + cvalue + ";"+ "path=/";
 	    //alert(document.cookie + "cookie")
 }
 
@@ -33,5 +32,6 @@ function checkCookie() {
 }
 
 function removeCookies() {
-	document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+	alert(document.cookie);
+	document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }

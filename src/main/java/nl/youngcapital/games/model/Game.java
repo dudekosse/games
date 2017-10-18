@@ -11,8 +11,10 @@ public class Game {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@Enumerated(EnumType.STRING)
 	private TypeGame typeGame;
 	private int timesPlayed;
+	
 	private String user;
 	private int highScore;
 	
@@ -47,7 +49,7 @@ public class Game {
 		return typeGame;
 	}
 	
-	@Enumerated(EnumType.ORDINAL)
+	@Enumerated(EnumType.STRING)
 	public void setTypeGame(TypeGame typeGame) {
 		this.typeGame = typeGame;
 	}
