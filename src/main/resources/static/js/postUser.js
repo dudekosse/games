@@ -1,12 +1,12 @@
-function calcAge(dateofbirth) {
+function calcAge(datestring) {
 	var today = new Date();
-    var dateofbirth = new Date(dateofbirth);
-    var age = today.getFullYear() - dateofbirth.getFullYear();
-    var mon = today.getMonth() - dateofbirth.getMonth();
-    if (mon < 0 || (mon === 0 && today.getDate() < dateofbirth.getDate())) {
-        age--;
+    var dateofbirth = new Date(datestring);
+    var years = today.getFullYear() - dateofbirth.getFullYear();
+    var months = today.getMonth() - dateofbirth.getMonth();
+    if (months < 0 || (months === 0 && today.getDate() < dateofbirth.getDate())) {
+        years--;
     }
-    return age;
+    return years;
 }
 
 function postUser(){
@@ -16,8 +16,8 @@ function postUser(){
 	var month = document.getElementById("month").value;
 	var year = document.getElementById("year").value;
 	var datestring = String(month)+"-"+String(day)+"-"+String(year);
-	//var age = calcAge(datestring)
-	var age = 24;
+	var age = calcAge(datestring)
+	//var age = 24;
 	var country = document.getElementById("country").value;
 	
 	var user = '{"username": "'+username+'","password": "'+password+'","age":"'+age+'","country":"'+country+'"}';
@@ -32,5 +32,5 @@ function postUser(){
 	xhttp.open("POST", "http://localhost:8082/registerpost", true);
 	xhttp.setRequestHeader("Content-type", "application/json");
 	xhttp.send(user);	
-	location.href = "success.html"
+	//location.href = "success.html"
 }
