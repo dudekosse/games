@@ -12,26 +12,19 @@ public class Shop {
 	private Long id;
 	private int vault;
 	
-	
 	public Shop(int vault) {
 		super();
 		this.vault = vault;
 	}
 
-	
-
 	public int getVault() {
 		return vault;
 	}
-
-
-
+	
 	public void setVault(int vault) {
 		this.vault = vault;
 	}
-
-
-
+	
 	public User buyStyle(User user) {
 		//todo, add functionality	
 		return user;
@@ -40,6 +33,4 @@ public class Shop {
 	public User buyCoins(User user) {
 		return user;
 	}
-	
-	
 }
