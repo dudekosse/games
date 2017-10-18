@@ -1,6 +1,6 @@
 function postLogin() {
-	var username = document.getElementById("username").value;
-	var password = document.getElementById("password").value;
+	var username = document.getElementById("loginUsername").value;
+	var password = document.getElementById("loginPassword").value;
 	
 	var user = '{"username":"'+username+'", "password":"'+password+'"}';
 	
