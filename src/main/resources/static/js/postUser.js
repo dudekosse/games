@@ -20,7 +20,7 @@ function postUser(){
 	//var age = 24;
 	var country = document.getElementById("country").value;
 	
-	var user = '{"username": "'+username+'","password": "'+password+'","age":"'+age+'","country":"'+country+'"}';
+	var user = '{"username": "'+username+'","password": "'+password+'","age":"'+ age +'","country":"'+country+'"}';
 	alert(user);
 	var xhttp = new XMLHttpRequest();
 	
@@ -29,6 +29,7 @@ function postUser(){
 			document.getElementById("outputserver").innerHTML = this.responseText;
 		}
 	};
+	console.log(user)
 	xhttp.open("POST", "http://localhost:8082/registerpost", true);
 	xhttp.setRequestHeader("Content-type", "application/json");
 	xhttp.send(user);	
