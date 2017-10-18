@@ -2,8 +2,10 @@ package nl.youngcapital.games.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import nl.youngcapital.games.model.Game;
@@ -37,11 +39,19 @@ public class EndPoint {
 		return check;
 	}
 	
-	@PostMapping("/gamepost")
-	public String postGame(@RequestBody Game game) {
-		if (gameService.checkType(game.getTypeGame().ordinal())) {
+	
+	@ResponseBody
+	@GetMapping("/userget")
+	public User getUser(String name) {
+		return userService.getUser(name);
+	}
+	
+	@PostMapping("/gamepost{name}")
+	public String postGame(@RequestBody Game game, @PathVariable String name) {
+		if (gameService.checkType(game.getTypeGame().toString())) {
 			gameService.updateTable(game);		
 			gameService.updateHighscore(game);
+			gameService.updateHighscoreName(name,game);
 		} else {
 			gameService.add(game);
 		}

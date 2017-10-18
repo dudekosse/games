@@ -30,4 +30,8 @@ public class UserService {
 		}
 		return check;
 	}
+	public User getUser(String username) {
+		return userrepository.getUser(username);
+	}
+	
 }

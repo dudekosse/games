@@ -17,23 +17,25 @@ public class GameService {
 		gamerepository.save(game);
 		return game;
 	}
-//	public void updateTable(Game game) {
-//		gamerepository.updateTable(game.getTimesPlayed(), game.getHighScore(),game.getHighScore(),game.getTypeGame());
-//	}
+
 	public void updateTable(Game game) {
-		gamerepository.updateTable(game.getTimesPlayed(),game.getTypeGame().ordinal());
+		gamerepository.updateTable(game.getTimesPlayed(),game.getTypeGame().toString());
 	}
 	
 	public void updateHighscore(Game game) {
-		gamerepository.updateHighscore(game.getHighScore(),game.getHighScore(), game.getTypeGame().ordinal());
+		gamerepository.updateHighscore(game.getHighScore(),game.getHighScore(), game.getTypeGame().toString());
 	}
 	
-	public boolean checkType(int type) {
+	public boolean checkType(String type) {
 		if (gamerepository.checkType(type).size() > 0) {
 			return true;
 		} else {
 			return false;
 		}	
+	}
+	
+	public void updateHighscoreName(String name, Game game) {
+		gamerepository.updateHighscoreName(name, game.getTypeGame().toString());
 	}
 //	public ArrayList<TypeGame> checkType(TypeGame type) {
 //		return gamerepository.checkType(type);
