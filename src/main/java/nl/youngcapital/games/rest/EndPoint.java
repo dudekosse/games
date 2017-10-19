@@ -23,7 +23,6 @@ public class EndPoint {
 
 	@PostMapping("/registerpost")
 	public boolean postUser(@RequestBody User user) {
-		System.out.println(user + "!!!");
 		Iterable<User> users = userService.userList();
 		boolean check = userService.knownUser(users, user);
 		if (check == false) {
@@ -41,13 +40,14 @@ public class EndPoint {
 	
 	
 	@ResponseBody
-	@GetMapping("/userget")
-	public User getUser(String name) {
+	@GetMapping("/userget{name}")
+	public User getUser(@PathVariable String name) {
 		return userService.getUser(name);
 	}
 	
 	@PostMapping("/gamepost{name}")
 	public String postGame(@RequestBody Game game, @PathVariable String name) {
+		System.out.println(game.getUser());
 		if (gameService.checkType(game.getTypeGame().toString())) {
 			gameService.updateTable(game);		
 			gameService.updateHighscore(game);

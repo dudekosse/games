@@ -12,6 +12,7 @@ function postLogin() {
 			var bool = JSON.parse(check);
 			login(bool, username);
 			if (check) {
+				removeCookies();
 				createCookie("username",username);
 			}
 		}
