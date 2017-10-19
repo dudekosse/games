@@ -17,9 +17,10 @@ public class User {
 	private int age;
 	private String country;
 	private int goldCoins = 10;
-	//private Map<TypeGame,Integer> gamesPlayed = new HashMap<TypeGame,Integer>();
-	//private Map<TypeGame,Integer> highScores = new HashMap<TypeGame,Integer>();		
 	
+//	@manyToOne()
+//	private Scores scores;
+
 	public User() {
 		super();
 	}

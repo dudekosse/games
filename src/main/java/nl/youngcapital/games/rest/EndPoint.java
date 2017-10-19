@@ -45,16 +45,24 @@ public class EndPoint {
 		return userService.getUser(name);
 	}
 	
-	@PostMapping("/gamepost{name}")
-	public String postGame(@RequestBody Game game, @PathVariable String name) {
-		System.out.println(game.getUser());
-		if (gameService.checkType(game.getTypeGame().toString())) {
-			gameService.updateTable(game);		
-			gameService.updateHighscore(game);
-			gameService.updateHighscoreName(name,game);
-		} else {
+//	@PostMapping("/gamepost{name}")
+//	public String postGame(@RequestBody Game game, @PathVariable String name) {
+	@PostMapping("/gamepost")
+	public String postGame(@RequestBody Game game) {
+
+//		String name = game.getUser().getUsername();
+//		if (gameService.checkType(game.getTypeGame().toString())) {
+//			gameService.updateTable(game);		
+//			gameService.updateHighscore(game);
+//			gameService.updateHighscoreName(name,game);
+//		} else {
 			gameService.add(game);
+<<<<<<< HEAD
 		}	
+=======
+//		}
+		
+>>>>>>> dcbd7db0076271955bfef2ab37c292260e6f9480
 		return "redirect:/ticTacToe.html";
 	}
 }

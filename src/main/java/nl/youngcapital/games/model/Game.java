@@ -5,38 +5,42 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Game {
-	@Id
-	@GeneratedValue
+
 	private Long id;
-	@Enumerated(EnumType.STRING)
 	private TypeGame typeGame;
 	private int timesPlayed;
 	
-	private String user;
-	private int highScore;
+	private User user;
+	private int score;
 	
 	public Game () {}
 
-	public Game(Long id, TypeGame typeGame, int timesPlayed, String user, int highScore) {
+	public Game(Long id, TypeGame typeGame, int timesPlayed, User user, int score) {
 		super();
 		this.id = id;
 		this.typeGame = typeGame;
 		this.timesPlayed = timesPlayed;
 		this.user = user;
-		this.highScore = highScore;
+		this.score = score;
 	}
-
-	public String getUser() {
+	
+	@OneToOne
+	public User getUser() {
 		return user;
 	}
 
-	public void setUser(String user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
-
+	
+	@Id
+	@GeneratedValue
 	public Long getId() {
 		return id;
 	}
@@ -44,12 +48,12 @@ public class Game {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
+	
+	@Enumerated(EnumType.STRING)
 	public TypeGame getTypeGame() {
 		return typeGame;
 	}
 	
-	@Enumerated(EnumType.STRING)
 	public void setTypeGame(TypeGame typeGame) {
 		this.typeGame = typeGame;
 	}
@@ -62,21 +66,21 @@ public class Game {
 		this.timesPlayed = timesPlayed;
 	}
 
-	public int getHighScore() {
-		return highScore;
+	public int getScore() {
+		return score;
 	}
 
-	public void setHighScore(int highScore) {
-		if (highScore > this.highScore) {
-			this.highScore = highScore;
+	public void setScore(int score) {
+		if (score > this.score) {
+			this.score = score;
 	
 		}
 	}
 
 	@Override
 	public String toString() {
-		return "Game [id=" + id + ", typeGame=" + typeGame + ", timesPlayed=" + timesPlayed + ", user=" + user
-				+ ", highScore=" + highScore + "]";
+		return "Game [id=" + id + ", typeGame=" + typeGame + ", timesPlayed=" + timesPlayed + ", user=" + user.toString()
+				+ ", score=" + score + "]";
 	}
 
 	
