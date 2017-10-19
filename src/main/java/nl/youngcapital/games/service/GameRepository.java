@@ -22,7 +22,7 @@ public interface GameRepository extends CrudRepository<Game, Long> {
 	
   	@Transactional
   	@Modifying
-	@Query("UPDATE Game SET high_score = ? where ? > high_score and type_game = ?")
+	@Query("UPDATE Game SET score = ? where ? > score and type_game = ?")
 	public void updateHighscore(int hs1, int hs2, String typeGame);
   	
   	@Transactional

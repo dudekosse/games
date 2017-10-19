@@ -23,7 +23,7 @@ public class GameService {
 	}
 	
 	public void updateHighscore(Game game) {
-		gamerepository.updateHighscore(game.getHighScore(),game.getHighScore(), game.getTypeGame().toString());
+		gamerepository.updateHighscore(game.getScore(),game.getScore(), game.getTypeGame().toString());
 	}
 	
 	public boolean checkType(String type) {
