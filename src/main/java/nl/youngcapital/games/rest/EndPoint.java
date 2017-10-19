@@ -54,8 +54,7 @@ public class EndPoint {
 			gameService.updateHighscoreName(name,game);
 		} else {
 			gameService.add(game);
-		}
-		
+		}	
 		return "redirect:/ticTacToe.html";
 	}
 }

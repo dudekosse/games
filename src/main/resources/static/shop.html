@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 <title>Form</title>
 <script src="js/cookieFactory.js"></script>
-<script src="js/postLogin.js"></script>
+<script src="js/buyCoins.js"></script>
 
 
 </head>
@@ -33,8 +33,8 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-3">Login</h1>
-    <p class="lead">Log into your account.</p>
+    <h1 class="display-3">Shop</h1>
+    <p class="lead">Spend your hard-earned gold coins.</p>
   </div>
 </div>
 
@@ -42,7 +42,15 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
-			
+			<h2>Buy gold coins</h2>
+			<select id="coins">
+				<option value="10">€10 - 10 coins</option>
+				<option value="22">€20 - 22 coins</option>
+				<option value="35">€30 - 35 coins</option>
+				<option value="48">€40 - 48 coins</option>
+				<option value="60">€50 - 60 coins</option>
+			</select>
+			<button type=button onclick="buyCoins()" class="btn btn-primary">Buy coins</button>
 		</div>
 	</div>
 </div>

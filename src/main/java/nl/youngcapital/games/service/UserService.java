@@ -22,6 +22,10 @@ public class UserService {
 		return userrepository.findAll();
 	}
 	
+	public void updateCoins(User user) {
+		userrepository.updateCoins(user.getGoldCoins(),user.getUsername());
+	}
+	
 	public boolean knownUser(Iterable<User> knownUsers, User user) {
 		boolean check = false; 
 		for (User knownUser : knownUsers) {
@@ -30,6 +34,7 @@ public class UserService {
 		}
 		return check;
 	}
+	
 	public User getUser(String username) {
 		return userrepository.getUser(username);
 	}

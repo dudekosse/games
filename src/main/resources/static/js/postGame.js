@@ -1,4 +1,3 @@
-
 function postGame(game,plays,wins,user){
     //curUser = checkCookie();
     var curUser = checkCookie().length > 0 ? checkCookie() : "anonymous";

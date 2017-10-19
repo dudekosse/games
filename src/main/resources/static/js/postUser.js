@@ -16,8 +16,7 @@ function postUser(){
 	var month = document.getElementById("month").value;
 	var year = document.getElementById("year").value;
 	var datestring = String(month)+"-"+String(day)+"-"+String(year);
-	var age = calcAge(datestring)
-	//var age = 24;
+	var age = calcAge(datestring);
 	var country = document.getElementById("country").value;
 	
 	var user = '{"username": "'+username+'","password": "'+password+'","age":"'+ age +'","country":"'+country+'"}';
@@ -34,4 +33,15 @@ function postUser(){
 	xhttp.setRequestHeader("Content-type", "application/json");
 	xhttp.send(user);	
 	//location.href = "success.html"
+}
+
+function buyCoins() {
+	var goldcoins = document.getElementById("coins").value;
+	alert(goldcoins);
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 202) {
+			
+		}
+	}
 }
