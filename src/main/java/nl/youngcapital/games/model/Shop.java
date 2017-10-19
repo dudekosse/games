@@ -10,21 +10,40 @@ public class Shop {
 	@Id
 	@GeneratedValue	
 	private Long id;
-	private int vault;
+	private int coinVault;
+	private int moneyVault;
 	
-	public Shop(int vault) {
+	public Shop(Long id, int coinVault, int moneyVault) {
 		super();
-		this.vault = vault;
+		this.id = id;
+		this.coinVault = coinVault;
+		this.moneyVault = moneyVault;
 	}
 
-	public int getVault() {
-		return vault;
+	public Long getId() {
+		return id;
 	}
-	
-	public void setVault(int vault) {
-		this.vault = vault;
+
+	public void setId(Long id) {
+		this.id = id;
 	}
-	
+
+	public int getCoinVault() {
+		return coinVault;
+	}
+
+	public void setCoinVault(int coinVault) {
+		this.coinVault = coinVault;
+	}
+
+	public int getMoneyVault() {
+		return moneyVault;
+	}
+
+	public void setMoneyVault(int moneyVault) {
+		this.moneyVault = moneyVault;
+	}
+
 	public User buyStyle(User user) {
 		//todo, add functionality	
 		return user;
