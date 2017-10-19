@@ -1,10 +1,11 @@
 function postGame(game,plays,wins,user){
     //curUser = checkCookie();
+	alert("game over")
     var curUser = checkCookie().length > 0 ? checkCookie() : "anonymous";
-
+    
     var xhttp = new XMLHttpRequest();
     
-    gameInfo = '{"typeGame": "'+game+'","timesPlayed": "'+plays+'","highScore":"'+wins+'","user":"'+""+'"}';
+    gameInfo = '{"typeGame": "'+game+'","timesPlayed": "'+plays+'","score":"'+wins+'","user":"'+""+'"}';
     gameInfo =  JSON.parse(gameInfo);
     getUserByCookie(curUser, gameInfo)
     

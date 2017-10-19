@@ -2,8 +2,9 @@
 <html>
 <head>
 	<script src="../js/cookieFactory.js"></script>
-
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="../js/postGame.js"></script>
+	<script src="../js/getTopScores.js"></script>
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -65,6 +66,7 @@
   			</div>
   		</div>
   		<div class="col-md-2"> 
+  		<button onclick=getTopScores("TETRIS")>click</button>
 			<h4>Highscores</h4>
 				<table>
 					<tbody>
@@ -97,6 +99,7 @@
 </div>
 
   <script src="/js/stats.js"></script>
+ 
   <script>
 
     //-------------------------------------------------------------------------

@@ -1,5 +1,7 @@
 package nl.youngcapital.games.rest;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -57,12 +59,18 @@ public class EndPoint {
 //			gameService.updateHighscoreName(name,game);
 //		} else {
 			gameService.add(game);
-<<<<<<< HEAD
-		}	
-=======
-//		}
-		
->>>>>>> dcbd7db0076271955bfef2ab37c292260e6f9480
+//<<<<<<< HEAD
+//		}	
+//=======
+////		}
+//		
+//>>>>>>> dcbd7db0076271955bfef2ab37c292260e6f9480
 		return "redirect:/ticTacToe.html";
+	}
+	
+	@ResponseBody
+	@GetMapping("/getHighscores{type}")
+	public ArrayList<Game> getHighscores(@PathVariable String type) {
+		return gameService.getTopFiveScores(type);
 	}
 }

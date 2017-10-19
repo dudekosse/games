@@ -1,11 +1,15 @@
 package nl.youngcapital.games.service;
 
+import java.util.ArrayList;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import antlr.collections.List;
 import nl.youngcapital.games.model.Game;
+import nl.youngcapital.games.model.TypeGame;
 
 @Service
 @Transactional
@@ -40,5 +44,14 @@ public class GameService {
 //	public ArrayList<TypeGame> checkType(TypeGame type) {
 //		return gamerepository.checkType(type);
 //	}
+	
+	public ArrayList<Game> getTopFiveScores(String typeGame) {
+		System.out.println(typeGame);
+		ArrayList<Game> x = gamerepository.findByTypeGameOrderByScoreDesc(typeGame);
+	
+		return x;
+	};
+
+
 
 }
