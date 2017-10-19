@@ -43,12 +43,12 @@ public class EndPoint {
 	public User getUser(@PathVariable String name) {
 		return userService.getUser(name);
 	}
-//	
-//	@PostMapping("/coins")
-//	public void buyCoins(@RequestBody User user) {
-//		userService.updateCoins(user, coins);
-//	}
-//	
+	
+	@PostMapping("/coins/{user}")
+	public void updateCoins(@RequestBody User user, @PathVariable int value) {
+		userService.updateCoins(user, value);
+	}
+	
 //	@PostMapping("/gamepost{name}")
 //	public String postGame(@RequestBody Game game, @PathVariable String name) {
 //		String name = game.getUser().getUsername();
