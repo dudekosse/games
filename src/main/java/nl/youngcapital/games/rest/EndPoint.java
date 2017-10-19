@@ -46,31 +46,41 @@ public class EndPoint {
 	public User getUser(@PathVariable String name) {
 		return userService.getUser(name);
 	}
-	
+//	
+//	@PostMapping("/coins")
+//	public void buyCoins(@RequestBody User user) {
+//		userService.updateCoins(user, coins);
+//	}
+//	
 //	@PostMapping("/gamepost{name}")
 //	public String postGame(@RequestBody Game game, @PathVariable String name) {
-	@PostMapping("/gamepost")
-	public String postGame(@RequestBody Game game) {
-
 //		String name = game.getUser().getUsername();
 //		if (gameService.checkType(game.getTypeGame().toString())) {
 //			gameService.updateTable(game);		
 //			gameService.updateHighscore(game);
 //			gameService.updateHighscoreName(name,game);
 //		} else {
-			gameService.add(game);
+//<<<<<<< HEAD
+//			gameService.add(game);
 //<<<<<<< HEAD
 //		}	
 //=======
 ////		}
 //		
 //>>>>>>> dcbd7db0076271955bfef2ab37c292260e6f9480
-		return "redirect:/ticTacToe.html";
-	}
+//		return "redirect:/ticTacToe.html";
+//	}
 	
 	@ResponseBody
 	@GetMapping("/getHighscores{type}")
 	public ArrayList<Game> getHighscores(@PathVariable String type) {
 		return gameService.getTopFiveScores(type);
 	}
+//=======
+//			gameService.add(game);
+//	}
+
+//		return "redirect:/ticTacToe.html";
+
+//>>>>>>> 9dad27527024dfe210e116c0e5ccaf49dbab154d
 }
