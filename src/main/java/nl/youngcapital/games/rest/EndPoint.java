@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import nl.youngcapital.games.model.Game;
 import nl.youngcapital.games.model.User;
 import nl.youngcapital.games.service.GameService;
 import nl.youngcapital.games.service.UserService;
@@ -44,25 +43,23 @@ public class EndPoint {
 	public User getUser(@PathVariable String name) {
 		return userService.getUser(name);
 	}
-	
+//	
+//	@PostMapping("/coins")
+//	public void buyCoins(@RequestBody User user) {
+//		userService.updateCoins(user, coins);
+//	}
+//	
 //	@PostMapping("/gamepost{name}")
 //	public String postGame(@RequestBody Game game, @PathVariable String name) {
-	@PostMapping("/gamepost")
-	public String postGame(@RequestBody Game game) {
-
 //		String name = game.getUser().getUsername();
 //		if (gameService.checkType(game.getTypeGame().toString())) {
 //			gameService.updateTable(game);		
 //			gameService.updateHighscore(game);
 //			gameService.updateHighscoreName(name,game);
 //		} else {
-			gameService.add(game);
-<<<<<<< HEAD
-		}	
-=======
-//		}
-		
->>>>>>> dcbd7db0076271955bfef2ab37c292260e6f9480
-		return "redirect:/ticTacToe.html";
-	}
+//			gameService.add(game);
+//	}
+
+//		return "redirect:/ticTacToe.html";
+
 }

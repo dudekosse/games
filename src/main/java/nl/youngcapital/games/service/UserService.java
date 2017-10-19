@@ -22,8 +22,9 @@ public class UserService {
 		return userrepository.findAll();
 	}
 	
-	public void updateCoins(User user) {
-		userrepository.updateCoins(user.getGoldCoins(),user.getUsername());
+	public void updateCoins(User user, int coins) {
+		user.setGoldCoins(user.getGoldCoins() + coins);
+		userrepository.save(user);
 	}
 	
 	public boolean knownUser(Iterable<User> knownUsers, User user) {
