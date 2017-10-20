@@ -69,9 +69,7 @@ public class EndPoint {
 //		} else {
 //			gameService.add(game);
 //	}
->>>>>>> 0c12df4fb432f3ee7b2fee4af4006bdd8693717a
 
-		}	
 	
 	@ResponseBody
 	@GetMapping("/getHighscores{type}")
