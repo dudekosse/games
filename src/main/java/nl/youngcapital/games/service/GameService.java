@@ -45,10 +45,10 @@ public class GameService {
 //		return gamerepository.checkType(type);
 //	}
 	
-	public ArrayList<Game> getTopFiveScores(String typeGame) {
+	public ArrayList<Game> getTopFiveScores(TypeGame typeGame) {
 		System.out.println(typeGame);
 		ArrayList<Game> x = gamerepository.findByTypeGameOrderByScoreDesc(typeGame);
-	
+		System.out.println(x.get(0));
 		return x;
 	};
 
