@@ -1,4 +1,6 @@
 function postLogin() {
+	document.getElementById("outputserver").innerHTML = "";
+	
 	var username = document.getElementById("loginUsername").value;
 	var password = document.getElementById("loginPassword").value;
 	
@@ -10,10 +12,12 @@ function postLogin() {
 		if (this.readyState == 4 && this.status == 200) {
 			var check = this.responseText;
 			var bool = JSON.parse(check);
-			login(bool, username);
 			if (check) {
 				removeCookies();
 				createCookie("username",username);
+				showLoggedInView();
+			} else {
+				showLoggedOutView();
 			}
 		}
 	};
@@ -21,13 +25,4 @@ function postLogin() {
 	xhttp.setRequestHeader("Content-type", "application/json");
 	xhttp.send(user);
 	//location.href = "success.html"
-}
-		
-function login(bool, username) {
-	if (bool == true){
-
-		alert("Login succesfull! Welcome "+ username)
-	} else {
-		alert("Username and password combination invalid");
-	}
 }

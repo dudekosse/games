@@ -24,8 +24,16 @@ function postUser(){
 	var xhttp = new XMLHttpRequest();
 	
 	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 202) {
-			document.getElementById("outputserver").innerHTML = this.responseText;
+		if (this.readyState == 4 && this.status == 200) {
+			var isAdded = JSON.parse(this.responseText);
+			if (isAdded) {
+				document.getElementById("outputserver").innerHTML = "Welkom! U bent nu geregistreerd!";
+				createCookie("username",username);
+				showLoggedInView();
+				document.getElementById("outputserver").innerHTML = "";
+			} else {
+				document.getElementById("outputserver").innerHTML = "Registreren mislukt! Probeer een andere username.";
+			}
 		}
 	};
 	xhttp.open("POST", "http://localhost:8082/registerpost", true);
