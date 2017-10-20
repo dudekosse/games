@@ -46,16 +46,30 @@ public class EndPoint {
 	public User getUser(@PathVariable String name) {
 		return userService.getUser(name);
 	}
-//	
-//	@PostMapping("/coins")
-//	public void buyCoins(@RequestBody User user) {
-//		userService.updateCoins(user, coins);
-//	}
+
 //	
 	@PostMapping("/gamepost{name}")
 	public String postGame(@RequestBody Game game, @PathVariable String name) {
 			gameService.add(game);
 			return "redirect:/ticTacToe.html";
+	}
+	
+	@PostMapping("/coins/{user}")
+	public void updateCoins(@RequestBody User user, @PathVariable int value) {
+		userService.updateCoins(user, value);
+	}
+	
+//	@PostMapping("/gamepost{name}")
+//	public String postGame(@RequestBody Game game, @PathVariable String name) {
+//		String name = game.getUser().getUsername();
+//		if (gameService.checkType(game.getTypeGame().toString())) {
+//			gameService.updateTable(game);		
+//			gameService.updateHighscore(game);
+//			gameService.updateHighscoreName(name,game);
+//		} else {
+//			gameService.add(game);
+//	}
+>>>>>>> 0c12df4fb432f3ee7b2fee4af4006bdd8693717a
 
 		}	
 	
