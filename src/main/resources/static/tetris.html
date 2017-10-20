@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
 	<script src="../js/cookieFactory.js"></script>
  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="../js/postGame.js"></script>
 	<script src="../js/getTopScores.js"></script>
-	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 	
@@ -24,7 +25,7 @@
   </style>
 </head>
 
-<body>
+<body id = "tetris">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="index.html">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,34 +67,22 @@
   			</div>
   		</div>
   		<div class="col-md-2"> 
-  		<button onclick=getTopScores("TETRIS")>click</button>
-			<h4>Highscores</h4>
-				<table>
-					<tbody>
-						<tr>
-							<td>1.</td>
-							<td>Bas</td>
-							<td>63829 <i class="fa fa-trophy" aria-hidden="true"></i></td>
-						</tr>
-						<tr>
-							<td>2.</td>
-							<td>Tom</td>
-							<td>23329</td>
-						</tr>
-						<tr>
-							<td>3.</td>
-							<td>Tom</td>
-							<td>13329</td>
-						</tr>
-						<tr>
-							<td>4.</td>
-							<td>Lana</td>
-							<td>1337</td>
-						</tr>
-					</tbody>
-				</table>
+  		<div ng-app="myApp2" ng-controller="myCtrl2">
+  			<h4 id = highscoresTETRIS>Highscores</h4>
+  			 <table>
+  				 <tbody ng-repeat="name in names track by $index">
+					<tr>
+  			 			<td>{{$index+1}}.</td>
+  			 			<td>{{names[$index]}}</td>
+  			 			<td>&ensp;</td>
+  						 <td>{{scores[$index]}}</td>
+	  					<td ng-show="$first">
+  						 	<i class="fa fa-trophy" aria-hidden="true">
+  						 </td>
+  					 </tr>
+				<tbody>
+			</table>
   		</div>
-  </div>
   <div class="row justify-content-md-center">
   </div>
 </div>

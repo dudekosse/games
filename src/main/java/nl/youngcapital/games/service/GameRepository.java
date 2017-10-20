@@ -38,5 +38,5 @@ public interface GameRepository extends CrudRepository<Game, Long> {
 //	@Query(value = "select user_id,score from game where type_game = ? order by score desc limit = 5", nativeQuery = true)
 //	public String selectTopFiveScores(String typeGame);
 
-	public ArrayList<Game> findByTypeGameOrderByScoreDesc(String typeGame);
+	public ArrayList<Game> findByTypeGameOrderByScoreDesc(TypeGame typeGame);
 }

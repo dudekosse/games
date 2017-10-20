@@ -3,10 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Tic Tac Toe</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/postGame.js"></script>
 <script type="text/javascript" src="js/ticTacToe.js"></script>
+<script src="../js/getTopScores.js"></script>
+
 <script src="js/cookieFactory.js"></script>
 
 <style>
@@ -24,7 +29,7 @@
 
 
 </head>
-<body>
+<body id = "tic_tac_toe">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="index.html">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,32 +70,24 @@
 				<INPUT TYPE="button" NAME="sqr7" class="tictac" value="     " onClick="if(document.tic.sqr7.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr7.value = ' X '; sqr7T = 1; turn = 1; vari(); check();} else if(document.tic.sqr7.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr7.value = ' X '; sqr7T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr7.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr7.value = ' O '; sqr7T = 1; turn = 1; vari(); player1Check()} drawCheck()"><INPUT TYPE="button" NAME="sqr8" class="tictac" value="     " onClick="if(document.tic.sqr8.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr8.value = ' X '; sqr8T = 1; turn = 1; vari(); check();} else if(document.tic.sqr8.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr8.value = ' X '; sqr8T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr8.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr8.value = ' O '; sqr8T = 1; turn = 1; vari(); player1Check()} drawCheck()"><INPUT TYPE="button" NAME="sqr9" class="tictac" value="     " onClick="if(document.tic.sqr9.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr9.value = ' X '; sqr9T = 1; turn = 1; vari(); check();} else if(document.tic.sqr9.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr9.value = ' X '; sqr9T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr9.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr9.value = ' O '; sqr9T = 1; turn = 1; vari(); player1Check()} drawCheck()">
 			</form>
 		</div>
+		
+		<div ng-app="myApp2" ng-controller="myCtrl2">		
 		<div class="col-md-2">
-			<h4>Highscores</h4>
-			<table>
+		<h4 id = highscoresTICTACTOE>Highscores</h4>
+  			 <table>
+  				 <tbody ng-repeat="name in names track by $index">
+					<tr>
+  			 			<td>{{$index+1}}.</td>
+  			 			<td>{{names[$index]}}</td>
+  			 			<td>&ensp;</td>
+  						 <td>{{scores[$index]}}</td>
+	  					<td ng-show="$first">
+  						 	<i class="fa fa-trophy" aria-hidden="true">
+  						 </td>
+  					 </tr>
 				<tbody>
-					<tr>
-						<td>1.</td>
-						<td>Bas</td>
-						<td>63829 <i class="fa fa-trophy" aria-hidden="true"></i></td>
-					</tr>
-					<tr>
-						<td>2.</td>
-						<td>Tom</td>
-						<td>23329</td>
-					</tr>
-					<tr>
-						<td>3.</td>
-						<td>Tom</td>
-						<td>13329</td>
-					</tr>
-					<tr>
-						<td>4.</td>
-						<td>Lana</td>
-						<td>1337</td>
-					</tr>
-				</tbody>
 			</table>
+  		</div>
 		</div>
 	</div>
 </div>
