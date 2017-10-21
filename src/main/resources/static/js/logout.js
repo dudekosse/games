@@ -1,0 +1,4 @@
+function logout() {
+	removeCookies();
+	showLoggedOutView();
+}
