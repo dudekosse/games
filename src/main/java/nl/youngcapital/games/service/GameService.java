@@ -40,16 +40,17 @@ public class GameService {
 	public void updateHighscoreName(String name, Game game) {
 		gamerepository.updateHighscoreName(name, game.getTypeGame().toString());
 	}
-//	public ArrayList<TypeGame> checkType(TypeGame type) {
-//		return gamerepository.checkType(type);
-//	}
+
 	
-	public ArrayList<Game> getTopFiveScores(TypeGame typeGame) {
-		System.out.println(typeGame);
-		ArrayList<Game> x = gamerepository.findByTypeGameOrderByScoreDesc(typeGame);
-		System.out.println(x.get(0));
-		return x;
+	public ArrayList<Game> getTopScores(TypeGame typeGame) {
+//		ArrayList<Game> sortedGames = gamerepository.findByTypeGameOrderByScoreDesc(typeGame);
+//		return sortedGames;
+		return gamerepository.findByTypeGameOrderByScoreDesc(typeGame);
 	};
+	
+//	public int countGamesByType(TypeGame typeGame) {
+//		return gamerepository.findByTypeGameCount(typeGame);
+//	};
 
 
 
