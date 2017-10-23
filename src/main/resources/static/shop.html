@@ -6,7 +6,7 @@
 <title>Form</title>
 <script src="js/cookieFactory.js"></script>
 <script src="js/postUser.js"></script>
-<script src="js/updateCoins.js"></script>
+<script src="js/buyCoins.js"></script>
 
 
 </head>
@@ -43,15 +43,24 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
-			<h2>Buy gold coins</h2>
-			<select id="coins">
-				<option value="10">€10 - 10 coins</option>
+			<h2>Purchase styles</h2>
+			<select id="styles">
+				<option value="10" selected="selected">€10 - 10 coins</option>
 				<option value="22">€20 - 22 coins</option>
 				<option value="35">€30 - 35 coins</option>
 				<option value="48">€40 - 48 coins</option>
 				<option value="60">€50 - 60 coins</option>
 			</select>
-			<button type=button onclick="updateCoins(value)" class="btn btn-primary">Buy coins</button>
+			
+			<h2>Buy gold coins</h2>
+			<select id="coins">
+				<option value="10" selected="selected">€10 - 10 coins</option>
+				<option value="22">€20 - 22 coins</option>
+				<option value="35">€30 - 35 coins</option>
+				<option value="48">€40 - 48 coins</option>
+				<option value="60">€50 - 60 coins</option>
+			</select>
+			<button type=button onclick="buyCoins()" class="btn btn-primary">Buy coins</button>
 		</div>
 	</div>
 </div>
