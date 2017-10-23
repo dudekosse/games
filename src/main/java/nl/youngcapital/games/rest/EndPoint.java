@@ -60,9 +60,14 @@ public class EndPoint {
 		userService.updateCoins(coins, user);
 	}
 	
-	@GetMapping("/styles/{user}/{style}")
-	public void updateStyle(@PathVariable String user, @PathVariable String style) {
-		userService.updateStyle(style, user);
+	@GetMapping("/simplestyle/{user}/{style1}")
+	public void updateSimpleStyle(@PathVariable String user, @PathVariable String style1) {
+		userService.updateSimpleStyle(style1, user);
+	}
+	
+	@GetMapping("/animatedstyle/{user}/{style1}/{style2}")
+	public void updateAnimatedStyle(@PathVariable String user, @PathVariable String style1, @PathVariable String style2) {
+		userService.updateAnimatedStyle(style1, style2, user);
 	}
 	
 //	@PostMapping("/gamepost{name}")

@@ -20,8 +20,13 @@ public interface UserRepository extends CrudRepository<User, Long> {
 	
 	@Transactional
 	@Modifying
-	@Query("UPDATE User SET style = ? where username = ?")
-	public void updateStyle(String style, String username);
+	@Query("UPDATE User SET style1 = ? where username = ?")
+	public void updateSimpleStyle(String style1, String username);
+	
+	@Transactional
+	@Modifying
+	@Query("UPDATE User SET style1 = ?, style2 = ? where username = ?")
+	public void updateAnimatedStyle(String style1, String style2, String username);
 	
 	@Query(value ="select * from user where username = ?",nativeQuery = true)
 	public User getUser(String username);

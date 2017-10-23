@@ -37,5 +37,6 @@ public interface GameRepository extends CrudRepository<Game, Long> {
 
 	public ArrayList<Game> findByTypeGameOrderByScoreDesc(TypeGame typeGame);
 	
-	public ArrayList<Game> findByTypeGame(TypeGame typeGame);
+//	public ArrayList<Game> findByTypeGame(TypeGame typeGame);
+//	public int CountfindByTypeGame(TypeGame typeGame);
 }
