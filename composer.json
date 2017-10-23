@@ -1,0 +1,6 @@
+{
+    "require": {
+        "symfony/property-access": "^3.3",
+        "symfony/property-info": "^3.3"
+    }
+}
