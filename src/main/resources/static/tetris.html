@@ -71,9 +71,10 @@
   			<h4 id = highscoresTETRIS>Highscores</h4>
   			 <table>
   				 <tbody ng-repeat="name in names track by $index">
+  				 
 					<tr>
   			 			<td>{{$index+1}}.</td>
-  			 			<td>{{names[$index]}}</td>
+  			 			<td ng-style="setColor($index)">{{names[$index]}}</td>
   			 			<td>&ensp;</td>
   						 <td>{{scores[$index]}}</td>
 	  					<td ng-show="$first">
