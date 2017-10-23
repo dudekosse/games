@@ -45,17 +45,35 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
-			<h2>Purchase styles</h2>
-				<select id="styles">
-					<option value="blue" selected="selected" style="color:blue";>blue - 50 coins</option>
-					<option value="red" style="color:red">red - 50 coins</option>
-					<option value="purple" style="color:purple">purple - 50 coins</option>
-					<option value="yellow" style="color:yellow">yellow - 50 coins</option>
-					<option value="pink" style="color:pink">pink - 50 coins</option>
+			<h2>Purchase simple style - 50 coins</h2>
+				<select id="style">
+					<option value="blue" selected="selected" style="color:blue">Blue</option>
+					<option value="red" style="color:red">Red</option>
+					<option value="purple" style="color:purple">Purple</option>
+					<option value="yellow" style="color:yellow">Yellow</option>
+					<option value="pink" style="color:pink">Pink</option>
+				</select><br>
+				<button type=button onclick="buySimpleStyle()" class="btn btn-primary">Buy simple style</button>
+				<br>
+				<br>
+			<h2>Purchase animated style - 100 coins</h2>
+				<select id="style1">
+					<option value="blue" selected="selected" style="color:blue">Blue</option>
+					<option value="red" style="color:red">Red</option>
+					<option value="purple" style="color:purple">Purple</option>
+					<option value="yellow" style="color:yellow">Yellow</option>
+					<option value="pink" style="color:pink">Pink</option>
 				</select>
-				<button type=button onclick="buyStyles()" class="btn btn-primary">Buy style</button>
+				<select id="style2">
+					<option value="blue" selected="selected" style="color:blue">Blue</option>
+					<option value="red" style="color:red">Red</option>
+					<option value="purple" style="color:purple">Purple</option>
+					<option value="yellow" style="color:yellow">Yellow</option>
+					<option value="pink" style="color:pink">Pink</option>
+				</select><br>
+				<button type=button onclick="buyAnimatedStyle()" class="btn btn-primary">Buy animated style</button>
 				<br>
-				<br>
+				<br>				
 				<h4>Shadow effects</h4>
 				<a style="text-shadow: 2px 2px black;" href="javascript:alert('Bought style');">SHADOW STYLE I</a><br>
 				<a style="text-shadow: 2px 2px blue;" href="javascript:alert('Bought style');">SHADOW STYLE II</a><br>

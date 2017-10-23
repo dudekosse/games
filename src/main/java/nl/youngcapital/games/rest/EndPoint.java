@@ -61,9 +61,8 @@ public class EndPoint {
 		userService.updateCoins(coins, user);
 	}
 	
-	@GetMapping("/styles/{user}/{style}")
+	@GetMapping("/simplestyle/{user}/{style}")
 	public void updateStyle(@PathVariable String user, @PathVariable String style) {
-		System.out.println(style + user);
 		userService.updateStyle(style, user);
 	}
 	
