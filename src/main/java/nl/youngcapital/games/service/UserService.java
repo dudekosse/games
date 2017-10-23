@@ -26,6 +26,10 @@ public class UserService {
 		userrepository.updateCoins(coins, user);
 	}
 	
+	public void updateStyle(String style, String user) {
+		userrepository.updateStyle(style, user);
+	}
+	
 	public boolean knownUser(Iterable<User> knownUsers, User user) {
 		boolean check = false; 
 		for (User knownUser : knownUsers) {

@@ -6,7 +6,7 @@
 <title>Form</title>
 <script src="js/cookieFactory.js"></script>
 <script src="js/postUser.js"></script>
-<script src="js/buyCoins.js"></script>
+<script src="js/buyStyles.js"></script>
 
 
 </head>
@@ -44,14 +44,42 @@
 	<div class="row">
 		<div class="col-md-4">
 			<h2>Purchase styles</h2>
-			<select id="styles">
-				<option value="10" selected="selected">€10 - 10 coins</option>
-				<option value="22">€20 - 22 coins</option>
-				<option value="35">€30 - 35 coins</option>
-				<option value="48">€40 - 48 coins</option>
-				<option value="60">€50 - 60 coins</option>
-			</select>
-			
+				<select id="styles">
+					<option value="blue" selected="selected" style="color:blue";>blue - 50 coins</option>
+					<option value="red" style="color:red">red - 50 coins</option>
+					<option value="purple" style="color:purple">purple - 50 coins</option>
+					<option value="yellow" style="color:yellow">yellow - 50 coins</option>
+					<option value="pink" style="color:pink">pink - 50 coins</option>
+				</select>
+				<button type=button onclick="buyStyles()" class="btn btn-primary">Buy style</button>
+				<br>
+				<br>
+				<h4>Shadow effects</h4>
+				<a style="text-shadow: 2px 2px black;" href="javascript:alert('Bought style');">SHADOW STYLE I</a><br>
+				<a style="text-shadow: 2px 2px blue;" href="javascript:alert('Bought style');">SHADOW STYLE II</a><br>
+				<a style="text-shadow: 2px 2px red;" href="javascript:alert('Bought style');">SHADOW STYLE III</a><br>
+				<a style="text-shadow: 2px 2px purple;" href="javascript:alert('Bought style');">SHADOW STYLE IV</a><br>
+				<a style="text-shadow: 2px 2px yellow;" href="javascript:alert('Bought style');">SHADOW STYLE V</a><br>
+			<br>
+				<h4>Keyboard effects</h4>
+				<a href="javascript:alert('Bought style');"><kbd>KEYBOARD STYLE</kbd></a><br>
+			<br>
+				<h4>Background effects</h4>
+				<a class="bg-primary" href="javascript:alert('Bought style');">BACKGROUND STYLE I</a><br>
+				<a class="bg-success" href="javascript:alert('Bought style');">BACKGROUND STYLE II</a><br>
+				<a class="bg-info" href="javascript:alert('Bought style');">BACKGROUND STYLE III</a><br>
+				<a class="bg-warning" href="javascript:alert('Bought style');">BACKGROUND STYLE IV</a><br>
+				<a class="bg-danger" href="javascript:alert('Bought style');">BACKGROUND STYLE V</a><br>
+			<br>
+				<h4>Color effects</h4>
+				<a class="text-muted" href="javascript:alert('Bought style');">TEXT STYLE I</a><br>
+				<a class="text-primary" href="javascript:alert('Bought style');">TEXT STYLE II</a><br>
+				<a class="text-success" href="javascript:alert('Bought style');">TEXT STYLE III</a><br>
+				<a class="text-info" href="javascript:alert('Bought style');">TEXT STYLE IV</a><br>
+				<a class="text-warning" href="javascript:alert('Bought style');">TEXT STYLE V</a><br>
+				<a class="text-danger" href="javascript:alert('Bought style');">TEXT STYLE VI</a><br>
+				<a class="null" href="javascript:alert('Bought style');">TEXT STYLE VI</a><br>
+			<br>
 			<h2>Buy gold coins</h2>
 			<select id="coins">
 				<option value="10" selected="selected">€10 - 10 coins</option>

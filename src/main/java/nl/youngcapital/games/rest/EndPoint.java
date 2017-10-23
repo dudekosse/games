@@ -57,9 +57,14 @@ public class EndPoint {
 	
 	@GetMapping("/coins/{user}/{coins}")
 	public void updateCoins(@PathVariable String user, @PathVariable int coins) {
-		//String name = "Tom";
 		System.out.println(coins + user);
 		userService.updateCoins(coins, user);
+	}
+	
+	@GetMapping("/styles/{user}/{style}")
+	public void updateStyle(@PathVariable String user, @PathVariable String style) {
+		System.out.println(style + user);
+		userService.updateStyle(style, user);
 	}
 	
 //	@PostMapping("/gamepost{name}")
