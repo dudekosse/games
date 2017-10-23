@@ -52,12 +52,11 @@ public class EndPoint {
 	@PostMapping("/gamepost{name}")
 	public String postGame(@RequestBody Game game, @PathVariable String name) {
 			gameService.add(game);
-			return "redirect:/ticTacToe.html";
+			return "";
 	}
 	
 	@GetMapping("/coins/{user}/{coins}")
 	public void updateCoins(@PathVariable String user, @PathVariable int coins) {
-		System.out.println(coins + user);
 		userService.updateCoins(coins, user);
 	}
 	
@@ -81,9 +80,14 @@ public class EndPoint {
 	@ResponseBody
 	@GetMapping("/getHighscores{type}")
 	public ArrayList<Game> getHighscores(@PathParam("type") TypeGame type) {
-		//@QueryParam("type") String type; 
-		System.out.println(type + " !!!!!!!!!!!!!!!");
-		return gameService.getTopFiveScores(type);
+		return gameService.getTopScores(type);
 	}
-
+	
+	@GetMapping("/getGamesPlayed{type}")
+	public int getGamesPlayed(@PathParam("type") TypeGame type) {
+//		System.out.println(gameService.countGamesByType(type));
+//		return gameService.countGamesByType(type);
+		return 1;
+	}
+		
 }
