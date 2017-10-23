@@ -17,6 +17,7 @@ public class User {
 	private int age;
 	private String country;
 	private int goldCoins = 10;
+	private String style = "black";
 	
 //	@manyToOne()
 //	private Scores scores;
@@ -32,13 +33,15 @@ public class User {
 		this.password = password;
 	}
 
-	public User(Long id, String username, String password, int age, String country) {
+	public User(Long id, String username, String password, int age, String country, int goldCoins, String style) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.age = age;
 		this.country = country;
+		this.goldCoins = goldCoins;
+		this.style = style;
 	}
 
 	public Long getId() {
@@ -81,22 +84,16 @@ public class User {
 	public void setGoldCoins(int goldCoins) {
 		this.goldCoins = goldCoins;
 	}
-//	public Map<TypeGame, Integer> getGamesPlayed() {
-//		return gamesPlayed;
-//	}
-//	public void setGamesPlayed(Map<TypeGame, Integer> gamesPlayed) {
-//		this.gamesPlayed = gamesPlayed;
-//	}
-//	public Map<TypeGame, Integer> getHighScores() {
-//		return highScores;
-//	}
-//	public void setHighScores(Map<TypeGame, Integer> highScores) {
-//		this.highScores = highScores;
-//	}
-	
+	public String getStyle() {
+		return style;
+	}
+	public void setStyle(String style) {
+		this.style = style;
+	}
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", age=" + age + ", country=" + country
-				+ ", goldCoins=" + goldCoins + "]";
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", age=" + age + ", country="
+				+ country + ", goldCoins=" + goldCoins + ", style=" + style + "]";
 	}
 }

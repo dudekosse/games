@@ -43,23 +43,28 @@ public class EndPoint {
 		return check;
 	}
 	
-	
 	@ResponseBody
 	@GetMapping("/userget{name}")
 	public User getUser(@PathVariable String name) {
 		return userService.getUser(name);
 	}
 
-//	
 	@PostMapping("/gamepost{name}")
 	public String postGame(@RequestBody Game game, @PathVariable String name) {
 			gameService.add(game);
 			return "redirect:/ticTacToe.html";
 	}
 	
-	@PostMapping("/coins/{user}")
-	public void updateCoins(@RequestBody User user, @PathVariable int value) {
-		userService.updateCoins(user, value);
+	@GetMapping("/coins/{user}/{coins}")
+	public void updateCoins(@PathVariable String user, @PathVariable int coins) {
+		System.out.println(coins + user);
+		userService.updateCoins(coins, user);
+	}
+	
+	@GetMapping("/styles/{user}/{style}")
+	public void updateStyle(@PathVariable String user, @PathVariable String style) {
+		System.out.println(style + user);
+		userService.updateStyle(style, user);
 	}
 	
 //	@PostMapping("/gamepost{name}")
