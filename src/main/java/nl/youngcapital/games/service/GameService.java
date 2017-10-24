@@ -49,7 +49,7 @@ public class GameService {
 	};
 	
 //	public int countGamesByType(TypeGame typeGame) {
-//		return gamerepository.findByTypeGameCount(typeGame);
+//		return gamerepository.findByTypeGame(typeGame).size();
 //	};
 
 
