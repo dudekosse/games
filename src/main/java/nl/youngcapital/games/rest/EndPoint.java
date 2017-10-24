@@ -43,23 +43,31 @@ public class EndPoint {
 		return check;
 	}
 	
-	
 	@ResponseBody
 	@GetMapping("/userget{name}")
 	public User getUser(@PathVariable String name) {
 		return userService.getUser(name);
 	}
 
-//	
 	@PostMapping("/gamepost{name}")
 	public String postGame(@RequestBody Game game, @PathVariable String name) {
 			gameService.add(game);
-			return "redirect:/ticTacToe.html";
+			return "";
 	}
 	
-	@PostMapping("/coins/{user}")
-	public void updateCoins(@RequestBody User user, @PathVariable int value) {
-		userService.updateCoins(user, value);
+	@GetMapping("/coins/{user}/{coins}")
+	public void updateCoins(@PathVariable String user, @PathVariable int coins) {
+		userService.updateCoins(coins, user);
+	}
+	
+	@GetMapping("/simplestyle/{user}/{style1}")
+	public void updateSimpleStyle(@PathVariable String user, @PathVariable String style1) {
+		userService.updateSimpleStyle(style1, user);
+	}
+	
+	@GetMapping("/animatedstyle/{user}/{style1}/{style2}")
+	public void updateAnimatedStyle(@PathVariable String user, @PathVariable String style1, @PathVariable String style2) {
+		userService.updateAnimatedStyle(style1, style2, user);
 	}
 	
 //	@PostMapping("/gamepost{name}")
@@ -77,9 +85,14 @@ public class EndPoint {
 	@ResponseBody
 	@GetMapping("/getHighscores{type}")
 	public ArrayList<Game> getHighscores(@PathParam("type") TypeGame type) {
-		//@QueryParam("type") String type; 
-		System.out.println(type + " !!!!!!!!!!!!!!!");
-		return gameService.getTopFiveScores(type);
+		return gameService.getTopScores(type);
 	}
-
+	
+	@GetMapping("/getGamesPlayed{type}")
+	public int getGamesPlayed(@PathParam("type") TypeGame type) {
+//		System.out.println(gameService.countGamesByType(type));
+//		return gameService.countGamesByType(type);
+		return 1;
+	}
+		
 }

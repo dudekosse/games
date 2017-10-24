@@ -58,7 +58,7 @@
 </div>
 
 <div class="container">
-	<div id="outputserver"></div>
+		<div ng-app="myApp2" ng-controller="myCtrl2">		
 	
 	<div class="row justify-content-md-center">
 		<div class="col-md-4">
@@ -71,16 +71,14 @@
 			</form>
 		</div>
 		
-		<div ng-app="myApp2" ng-controller="myCtrl2">		
 		<div class="col-md-2">
 		<h4 id = highscoresTICTACTOE>Highscores</h4>
   			 <table>
-  				 <tbody ng-repeat="name in names track by $index">
+  				 <tbody ng-repeat="score in topscores">
 					<tr>
-  			 			<td>{{$index+1}}.</td>
-  			 			<td>{{names[$index]}}</td>
+  			 			<td ng-style="setColor(score)">{{score.user.username}}</td>
   			 			<td>&ensp;</td>
-  						 <td>{{scores[$index]}}</td>
+  						 <td>{{score.score}}</td>
 	  					<td ng-show="$first">
   						 	<i class="fa fa-trophy" aria-hidden="true">
   						 </td>

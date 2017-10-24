@@ -22,9 +22,16 @@ public class UserService {
 		return userrepository.findAll();
 	}
 	
-	public void updateCoins(User user, int coins) {
-		user.setGoldCoins(user.getGoldCoins() + coins);
-		userrepository.save(user);
+	public void updateCoins(int coins, String user) {
+		userrepository.updateCoins(coins, user);
+	}
+	
+	public void updateSimpleStyle(String style1, String user) {
+		userrepository.updateSimpleStyle(style1, user);
+	}
+	
+	public void updateAnimatedStyle(String style1, String style2, String user) {
+		userrepository.updateAnimatedStyle(style1, style2, user);
 	}
 	
 	public boolean knownUser(Iterable<User> knownUsers, User user) {

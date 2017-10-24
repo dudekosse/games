@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 
-import antlr.collections.List;
 import nl.youngcapital.games.model.Game;
 import nl.youngcapital.games.model.TypeGame;
 
@@ -35,8 +34,9 @@ public interface GameRepository extends CrudRepository<Game, Long> {
 	@Query(value ="select times_played from game where type_game = ?", nativeQuery = true)
 	public ArrayList<TypeGame> checkType(String type);
 	
-//	@Query(value = "select user_id,score from game where type_game = ? order by score desc limit = 5", nativeQuery = true)
-//	public String selectTopFiveScores(String typeGame);
 
 	public ArrayList<Game> findByTypeGameOrderByScoreDesc(TypeGame typeGame);
+	
+//	public ArrayList<Game> findByTypeGame(TypeGame typeGame);
+//	public int CountfindByTypeGame(TypeGame typeGame);
 }
