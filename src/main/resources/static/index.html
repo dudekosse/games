@@ -1,19 +1,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Javascript Tetris</title>
+	<title>Games application</title>
 	
-	<!-- AngularJS -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 	<!-- BOOTSTRAP + JQuery + Popper plugins-->
 	<link rel="stylesheet"
 		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
 		integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
-		crossorigin="anonymous">
-	<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		crossorigin="anonymous"></link>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+	
+	<!-- AngularJS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	
+	<!-- JQuery UI -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
 		integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
@@ -22,31 +28,118 @@
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
 		integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
 		crossorigin="anonymous"></script>
-	
-	
-	<!-- JQuery UI -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>		
 		
 	<!-- Own scripts -->
+	<script src="../js/buyCoins.js"></script>
+	<script src="../js/buyStyles.js"></script>
 	<script src="../js/cookieFactory.js"></script>
+	<script src="../js/fancyStyle.js"></script>
 	<script src="../js/getGame.js"></script>
-	<script src="../js/postGame.js"></script>
-	<script src="../js/getUser.js"></script>
-	<script src="../js/postUser.js"></script>
-	<script src="../js/postLogin.js"></script>
-	<script src="../js/logout.js"></script>
+	<script src="../js/getInformationAndStatistics.js"></script>
 	<script src="../js/getTopScores.js"></script>
-	<script src="/js/stats.js"></script>
-	<script src="/js/tetris.js"></script>
-	<script src="/js/ticTacToe.js"></script>
-	<script src="js/buyStyles.js"></script>
-	<script src="js/buyCoins.js"></script>
-	<script type="text/javascript" src="js/postGame.js"></script>
-	<script type="text/javascript" src="js/ticTacToe.js"></script>
+	<script src="../js/getUser.js"></script>
 	<script src="../js/hidePageElements.js"></script>
+	<script src="../js/logout.js"></script>
+	<script src="../js/postGame.js"></script>
+	<script src="../js/postLogin.js"></script>
+	<script src="../js/postUser.js"></script>
+	<script src="../js/stats.js"></script>
+	<script src="../js/tetris.js"></script>
+	<script src="../js/ticTacToe.js"></script>
 	
-
+	<style>
+		#tetris {
+			margin: 1em auto;
+			padding: 1em;
+			border-radius: 10px;
+			background-color: #F8F8F8;
+		}
+		
+		#stats {
+			display: inline-block;
+			vertical-align: top;
+		}
+		
+		#canvas {
+			display: inline-block;
+			vertical-align: top;
+			background: url(texture.jpg);
+			box-shadow: 10px 10px 10px #999;
+			width: 200px;
+			height: 400px
+		}
+		
+		#menu {
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+		}
+		
+		#menu p {
+			margin: 0.5em 0;
+			text-align: center;
+		}
+		
+		#menu p a {
+			text-decoration: none;
+			color: black;
+		}
+		
+		#upcoming {
+			display: block;
+			margin: 0 auto;
+			background-color: #E0E0E0;
+		}
+		
+		#score {
+			color: red;
+			font-weight: bold;
+			vertical-align: middle;
+		}
+		
+		#rows {
+			color: blue;
+			font-weight: bold;
+			vertical-align: middle;
+		}
+		
+		#stats {
+			position: absolute;
+			bottom: 0em;
+			right: 1em;
+		}
+		
+		input.tictac {
+		font-size: 48px;
+		text-align: center;
+		color: #888888;
+		background: paleturquoise;
+		border: 1px solid #888888;
+		width: 80px;
+		height: 80px;
+		line-height: 80px;
+		}
+		
+		.rainbow {
+		  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+		  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+		  color:transparent;
+		  -webkit-background-clip: text;
+		  background-clip: text;
+		}
+		
+		.flash {
+		  -webkit-animation: rainbow 1s infinite; 
+		}
+		
+		@-webkit-keyframes flash{
+			20%{color: red;}
+			40%{color: yellow;}
+			60%{color: green;}
+			80%{color: blue;}
+			100%{color: orange;}	
+		}
+	</style>
 </head>
 
 <body>
@@ -73,6 +166,7 @@
 			</div>	
 		</nav>
 	
+		<!-- HOME -->
 		<div id="homepage">
 			<div class="jumbotron jumbotron-fluid">
 				<div class="container">
@@ -96,74 +190,12 @@
 			</div>
 		</div>
 	
+		<!-- TETRIS -->
 		<div id="tetrispage">
-			<style>
-				#tetris {
-					margin: 1em auto;
-					padding: 1em;
-					border-radius: 10px;
-					background-color: #F8F8F8;
-				}
-				
-				#stats {
-					display: inline-block;
-					vertical-align: top;
-				}
-				
-				#canvas {
-					display: inline-block;
-					vertical-align: top;
-					background: url(texture.jpg);
-					box-shadow: 10px 10px 10px #999;
-					width: 200px;
-					height: 400px
-				}
-				
-				#menu {
-					display: inline-block;
-					vertical-align: top;
-					position: relative;
-				}
-				
-				#menu p {
-					margin: 0.5em 0;
-					text-align: center;
-				}
-				
-				#menu p a {
-					text-decoration: none;
-					color: black;
-				}
-				
-				#upcoming {
-					display: block;
-					margin: 0 auto;
-					background-color: #E0E0E0;
-				}
-				
-				#score {
-					color: red;
-					font-weight: bold;
-					vertical-align: middle;
-				}
-				
-				#rows {
-					color: blue;
-					font-weight: bold;
-					vertical-align: middle;
-				}
-				
-				#stats {
-					position: absolute;
-					bottom: 0em;
-					right: 1em;
-				}
-			</style>
 			<div class="jumbotron jumbotron-fluid">
 				<div class="container">
 					<h1 class="display-3">Tetris</h1>
-					<p class="lead">Play a game of tetris and increase your
-						highscore.</p>
+					<p class="lead">Play a game of tetris and increase your highscore.</p>
 				</div>
 			</div>
 			<div class="container">
@@ -189,36 +221,35 @@
 						<div ng-app="myApp2" ng-controller="myCtrl2">
 							<h4 id="highscoresTETRIS">Highscores</h4>
 							<table>
-								<tbody ng-repeat="name in names track by $index">
+								<tbody ng-repeat="score in topscores">
 									<tr>
-										<td>{{$index+1}}.</td>
-										<td ng-style="setColor($index)">{{names[$index]}}</td>
-										<td>&ensp;</td>
-										<td>{{scores[$index]}}</td>
-										<td ng-show="$first">
-											<i class="fa fa-trophy" aria-hidden="true"></i>
-										</td>
+										<td ng-style=setSimple(score)><span ng-class=setFancy(score)>{{score.user.username}}</span></td>
+				  			 			<td>&ensp;</td>
+				  						 <td>{{score.score}}</td>
+					  					<td ng-show="$first">
+				  						 	<i class="fa fa-trophy" aria-hidden="true"></i>
+				  						 </td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
 					</div>
 				</div>
-			</div>	
+			</div>
 			<script>
 				//-------------------------------------------------------------------------
 				// base helper methods
 				//-------------------------------------------------------------------------
-			
+	
 				function get(id)        { return document.getElementById(id);  }
 				function hide(id)       { get(id).style.visibility = 'hidden'; }
 				function show(id)       { get(id).style.visibility = null;     }
 				function html(id, html) { get(id).innerHTML = html;            }
-			
+	
 				function timestamp()           { return new Date().getTime();                             }
 				function random(min, max)      { return (min + (Math.random() * (max - min)));            }
 				function randomChoice(choices) { return choices[Math.round(random(0, choices.length-1))]; }
-			
+	
 				if (!window.requestAnimationFrame) { // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
 				  window.requestAnimationFrame = window.webkitRequestAnimationFrame ||
 												 window.mozRequestAnimationFrame    ||
@@ -228,11 +259,11 @@
 												   window.setTimeout(callback, 1000 / 60);
 												 }
 				}
-			
+	
 				// -------------------------------------------------------------------------
 				// game constants
 				// -------------------------------------------------------------------------
-			
+	
 				var KEY     = { ESC: 27, SPACE: 32, LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40 },
 					DIR     = { UP: 0, RIGHT: 1, DOWN: 2, LEFT: 3, MIN: 0, MAX: 3 },
 					stats   = new Stats(),
@@ -240,19 +271,19 @@
 					ctx     = canvas.getContext('2d'),
 					ucanvas = get('upcoming'),
 					uctx    = ucanvas.getContext('2d'),
-			// speed = { start: 0.6, decrement: 0.005, min: 0.1 }, // how long before piece
-			// drops by 1 row (seconds)
+				// speed = { start: 0.6, decrement: 0.005, min: 0.1 }, // how long before piece
+				// drops by 1 row (seconds)
 					speed   = { start: 0.1, decrement: 1, min: 0.1 }, // how long before
 																		// piece drops by 1
 																		// row (seconds)
 					nx      = 10, // width of tetris court (in blocks)
 					ny      = 20, // height of tetris court (in blocks)
 					nu      = 5;  // width/height of upcoming preview (in blocks)
-			
+	
 				// -------------------------------------------------------------------------
 				// game variables (initialized during reset)
 				// -------------------------------------------------------------------------
-			
+	
 				var dx, dy,        // pixel size of a single tetris block
 					blocks,        // 2 dimensional array (nx*ny) representing tetris court
 									// - either empty block or occupied by a 'piece'
@@ -266,7 +297,7 @@
 									// in small chunks - like a spinning slot machine)
 					rows,          // number of completed rows in the current game
 					step;          // how long before current piece drops by 1 row
-			
+	
 				// -------------------------------------------------------------------------
 				// tetris pieces
 				//
@@ -282,7 +313,7 @@
 				// 0x44C0
 				//
 				// -------------------------------------------------------------------------
-			
+	
 				var i = { size: 4, blocks: [0x0F00, 0x2222, 0x00F0, 0x4444], color: 'cyan'   };
 				var j = { size: 3, blocks: [0x44C0, 0x8E00, 0x6440, 0x0E20], color: 'blue'   };
 				var l = { size: 3, blocks: [0x4460, 0x0E80, 0xC440, 0x2E00], color: 'orange' };
@@ -290,7 +321,7 @@
 				var s = { size: 3, blocks: [0x06C0, 0x8C40, 0x6C00, 0x4620], color: 'green'  };
 				var t = { size: 3, blocks: [0x0E40, 0x4C40, 0x4E00, 0x4640], color: 'purple' };
 				var z = { size: 3, blocks: [0x0C60, 0x4C80, 0xC600, 0x2640], color: 'red'    };
-			
+	
 				// ------------------------------------------------
 				// do the bit manipulation and iterate through each
 				// occupied block (x,y) for a given piece
@@ -307,7 +338,7 @@
 					}
 				  }
 				}
-			
+	
 				// -----------------------------------------------------
 				// check if a piece can fit into a position in the grid
 				// -----------------------------------------------------
@@ -319,11 +350,11 @@
 				  });
 				  return result;
 				}
-			
+	
 				function unoccupied(type, x, y, dir) {
 				  return !occupied(type, x, y, dir);
 				}
-			
+	
 				// -----------------------------------------
 				// start with 4 instances of each piece and
 				// pick randomly until the 'bag is empty'
@@ -335,17 +366,17 @@
 				  var type = pieces.splice(random(0, pieces.length-1), 1)[0];
 				  return { type: type, dir: DIR.UP, x: Math.round(random(0, nx - type.size)), y: 0 };
 				}
-			
-			
+	
+	
 				// -------------------------------------------------------------------------
 				// GAME LOOP
 				// -------------------------------------------------------------------------
-			
+	
 				function run() {
-			
+	
 				  showStats(); // initialize FPS counter
 				  addEvents(); // attach keydown and resize events
-			
+	
 				  var last = now = timestamp();
 				  function frame() {
 					now = timestamp();
@@ -361,23 +392,23 @@
 					last = now;
 					requestAnimationFrame(frame, canvas);
 				  }
-			
+	
 				  resize(); // setup all our sizing information
 				  reset();  // reset the per-game variables
 				  frame();  // start the first frame
-			
+	
 				}
-			
+	
 				function showStats() {
 				  stats.domElement.id = 'stats';
 				  get('menu').appendChild(stats.domElement);
 				}
-			
+	
 				function addEvents() {
 				  document.addEventListener('keydown', keydown, false);
 				  window.addEventListener('resize', resize, false);
 				}
-			
+	
 				function resize(event) {
 				  canvas.width   = canvas.clientWidth;  // set canvas logical size equal to
 														// its physical size
@@ -389,7 +420,7 @@
 				  invalidate();
 				  invalidateNext();
 				}
-			
+	
 				function keydown(ev) {
 				  var handled = false;
 				  if (playing) {
@@ -409,14 +440,14 @@
 					ev.preventDefault(); // prevent arrow keys from scrolling the page
 											// (supported in IE9+ and all other browsers)
 				}
-			
+	
 				// -------------------------------------------------------------------------
 				// GAME LOGIC
 				// -------------------------------------------------------------------------
-			
+	
 				function play() { hide('start'); reset();          playing = true;  }
 				function lose() { show('start'); setVisualScore(); playing = false; postGame("TETRIS",1,score,"TEST")}
-			
+	
 				function setVisualScore(n)      { vscore = n || score; invalidateScore(); }
 				function setScore(n)            { score = n; setVisualScore(n);  }
 				function addScore(n)            { score = score + n;   }
@@ -430,7 +461,7 @@
 				function clearActions()         { actions = []; }
 				function setCurrentPiece(piece) { current = piece || randomPiece(); invalidate();     }
 				function setNextPiece(piece)    { next    = piece || randomPiece(); invalidateNext(); }
-			
+	
 				function reset() {
 				  dt = 0;
 				  clearActions();
@@ -440,7 +471,7 @@
 				  setCurrentPiece(next);
 				  setNextPiece();
 				}
-			
+	
 				function update(idt) {
 				  if (playing) {
 					if (vscore < score)
@@ -453,7 +484,7 @@
 					}
 				  }
 				}
-			
+	
 				function handle(action) {
 				  switch(action) {
 					case DIR.LEFT:  move(DIR.LEFT);  break;
@@ -462,7 +493,7 @@
 					case DIR.DOWN:  drop();          break;
 				  }
 				}
-			
+	
 				function move(dir) {
 				  var x = current.x, y = current.y;
 				  switch(dir) {
@@ -480,7 +511,7 @@
 					return false;
 				  }
 				}
-			
+	
 				function rotate() {
 				  var newdir = (current.dir == DIR.MAX ? DIR.MIN : current.dir + 1);
 				  if (unoccupied(current.type, current.x, current.y, newdir)) {
@@ -488,7 +519,7 @@
 					invalidate();
 				  }
 				}
-			
+	
 				function drop() {
 				  if (!move(DIR.DOWN)) {
 					addScore(10);
@@ -502,13 +533,13 @@
 					}
 				  }
 				}
-			
+	
 				function dropPiece() {
 				  eachblock(current.type, current.x, current.y, current.dir, function(x, y) {
 					setBlock(x, y, current.type);
 				  });
 				}
-			
+	
 				function removeLines() {
 				  var x, y, complete, n = 0;
 				  for(y = ny ; y > 0 ; --y) {
@@ -528,7 +559,7 @@
 					addScore(100*Math.pow(2,n-1)); // 1: 100, 2: 200, 3: 400, 4: 800
 				  }
 				}
-			
+	
 				function removeLine(n) {
 				  var x, y;
 				  for(y = n ; y >= 0 ; --y) {
@@ -536,18 +567,18 @@
 					  setBlock(x, y, (y == 0) ? null : getBlock(x, y-1));
 				  }
 				}
-			
+	
 				// -------------------------------------------------------------------------
 				// RENDERING
 				// -------------------------------------------------------------------------
-			
+	
 				var invalid = {};
-			
+	
 				function invalidate()         { invalid.court  = true; }
 				function invalidateNext()     { invalid.next   = true; }
 				function invalidateScore()    { invalid.score  = true; }
 				function invalidateRows()     { invalid.rows   = true; }
-			
+	
 				function draw() {
 				  ctx.save();
 				  ctx.lineWidth = 1;
@@ -558,7 +589,7 @@
 				  drawRows();
 				  ctx.restore();
 				}
-			
+	
 				function drawCourt() {
 				  if (invalid.court) {
 					ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -575,7 +606,7 @@
 					invalid.court = false;
 				  }
 				}
-			
+	
 				function drawNext() {
 				  if (invalid.next) {
 					var padding = (nu - next.type.size) / 2; // half-arsed attempt at
@@ -591,54 +622,43 @@
 					invalid.next = false;
 				  }
 				}
-			
+	
 				function drawScore() {
 				  if (invalid.score) {
 					html('score', ("00000" + Math.floor(vscore)).slice(-5));
 					invalid.score = false;
 				  }
 				}
-			
+	
 				function drawRows() {
 				  if (invalid.rows) {
 					html('rows', rows);
 					invalid.rows = false;
 				  }
 				}
-			
+	
 				function drawPiece(ctx, type, x, y, dir) {
 				  eachblock(type, x, y, dir, function(x, y) {
 					drawBlock(ctx, x, y, type.color);
 				  });
 				}
-			
+	
 				function drawBlock(ctx, x, y, color) {
 				  ctx.fillStyle = color;
 				  ctx.fillRect(x*dx, y*dy, dx, dy);
 				  ctx.strokeRect(x*dx, y*dy, dx, dy)
 				}
-			
+	
 				// -------------------------------------------------------------------------
 				// FINALLY, lets run the game
 				// -------------------------------------------------------------------------
-			
+	
 				run();
-			</script>		
-		</div>
-					
+			</script>
+		</div>	
+		
+		<!-- TIC TAC TOE -->
 		<div id="tictactoepage">
-			<style>
-				input.tictac {
-					font-size: 48px;
-					text-align: center;
-					color: #888888;
-					background: paleturquoise;
-					border: 1px solid #888888;
-					width: 80px;
-					height: 80px;
-					line-height: 80px;
-				}
-			</style>
 			<div class="jumbotron jumbotron-fluid">
 			  <div class="container">
 				<h1 class="display-3">Tic Tac Toe</h1>
@@ -662,12 +682,12 @@
 						<table>
 							<tbody ng-repeat="score in topscores">
 								<tr>
-									<td ng-style="setColor(score)">{{score.user.username}}</td>
-									<td>&ensp;</td>
-									<td>{{score.score}}</td>
-									<td ng-show="$first">
-										<i class="fa fa-trophy" aria-hidden="true"></i>
-									</td>
+									<td ng-style=setSimple(score)><span ng-class=setFancy(score)>{{score.user.username}}</span></td>
+			  			 			<td>&ensp;</td>
+			  						 <td>{{score.score}}</td>
+				  					<td ng-show="$first">
+			  						 	<i class="fa fa-trophy" aria-hidden="true"></i>
+			  						 </td>
 								</tr>
 							</tbody>
 						</table>
@@ -676,6 +696,7 @@
 			</div>
 		</div>
 			
+		<!-- SHOP -->	
 		<div id="shoppage">
 			<div class="jumbotron jumbotron-fluid">
 			  <div class="container">
@@ -686,35 +707,42 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<h2>Purchase simple style - 50 coins</h2>
-							<select id="style">
-								<option value="blue" selected="selected" style="color:blue">Blue</option>
+						<h2>Purchase simple color - 50 coins</h2>
+							<select id="color">
+								<option value="NULL" selected="selected">No color</option>
+								<option value="blue" style="color:blue">Blue</option>
 								<option value="red" style="color:red">Red</option>
 								<option value="purple" style="color:purple">Purple</option>
 								<option value="yellow" style="color:yellow">Yellow</option>
 								<option value="pink" style="color:pink">Pink</option>
 							</select><br>
+							<button type=button onclick="buySimpleColor()" class="btn btn-primary">Buy simple color</button>
+							<br>
+							<br>
+						<h2>Purchase simple style - 100 coins</h2>
+							<select id="style">
+								<option value="NULL" selected="selected">No style</option>
+								<option value='bold' style="font-weight:bold">Bold</option>
+								<option value="oblique" style="font-style:oblique">Oblique</option>
+								<option value="underline" style="text-decoration:underline">Underline</option>
+							</select>
 							<button type=button onclick="buySimpleStyle()" class="btn btn-primary">Buy simple style</button>
 							<br>
 							<br>
-						<h2>Purchase animated style - 100 coins</h2>
-							<select id="style1">
-								<option value="blue" selected="selected" style="color:blue">Blue</option>
-								<option value="red" style="color:red">Red</option>
-								<option value="purple" style="color:purple">Purple</option>
-								<option value="yellow" style="color:yellow">Yellow</option>
-								<option value="pink" style="color:pink">Pink</option>
+						<h2>Purchase fancy style - 500 coins</h2>
+							<select id="fancy">
+								<option value='NULL' selected="selected">No fancy color</option>
+								<option value='rainbow'>Rainbow</option>
 							</select>
-							<select id="style2">
-								<option value="blue" selected="selected" style="color:blue">Blue</option>
-								<option value="red" style="color:red">Red</option>
-								<option value="purple" style="color:purple">Purple</option>
-								<option value="yellow" style="color:yellow">Yellow</option>
-								<option value="pink" style="color:pink">Pink</option>
-							</select><br>
-							<button type=button onclick="buyAnimatedStyle()" class="btn btn-primary">Buy animated style</button>
+							<button type=button onclick="buyFancyColor()" class="btn btn-primary">Buy fancy color</button>
 							<br>
-							<br>				
+							<br>	
+						<h2>Purchase effect - 500 coins</h2>
+							<select id="effect">
+								<option value='NULL' selected="selected">No effect</option>
+								<option value='pulsate'>Pulsate</option>
+							</select>
+							<button type=button onclick="buyEffect()" class="btn btn-primary">Buy effect</button>							
 							<h4>Shadow effects</h4>
 							<a style="text-shadow: 2px 2px black;" href="javascript:alert('Bought style');">SHADOW STYLE I</a><br>
 							<a style="text-shadow: 2px 2px blue;" href="javascript:alert('Bought style');">SHADOW STYLE II</a><br>
@@ -752,7 +780,6 @@
 						<button type=button onclick="buyCoins()" class="btn btn-primary">Buy coins</button>
 					</div>
 				</div>
-				<div id="outputserver"></div>
 			</div>
 		</div>
 	</div>
@@ -774,16 +801,14 @@
 					<form>
 						<div class="form-group">
 							<label for="username">Username</label>
-							<input type="text" class="form-control" id="username" placeholder="Enter username" required />
+							<input type="text" class="form-control" id="username" placeholder="Enter username" required></input>
 						</div>
 						<div class="form-group">
 							<label for="password">Password</label>
-							<input type="password"
-								class="form-control" id="password" placeholder="Enter password"
-								required />
+							<input type="password" class="form-control" id="password" placeholder="Enter password" required></input>
 						</div>
 						<div class="form-group">
-							<label for="dateofbirth">Date of birth</label><br /> 
+							<label for="dateofbirth">Date of birth</label><br> 
 							<select id="day">
 								<option value="01" selected="selected">01</option>
 								<option value="02">02</option>
@@ -975,8 +1000,7 @@
 								<option value="COL">Colombia</option>
 								<option value="COM">Comoros</option>
 								<option value="COG">Congo</option>
-								<option value="COD">Congo, the Democratic Republic of
-									the</option>
+								<option value="COD">Congo, the Democratic Republic of the</option>
 								<option value="COK">Cook Islands</option>
 								<option value="CRI">Costa Rica</option>
 								<option value="CIV">C�te d'Ivoire</option>
@@ -1042,8 +1066,7 @@
 								<option value="KAZ">Kazakhstan</option>
 								<option value="KEN">Kenya</option>
 								<option value="KIR">Kiribati</option>
-								<option value="PRK">Korea, Democratic People's Republic
-									of</option>
+								<option value="PRK">Korea, Democratic People's Republic of</option>
 								<option value="KOR">Korea, Republic of</option>
 								<option value="KWT">Kuwait</option>
 								<option value="KGZ">Kyrgyzstan</option>
@@ -1057,8 +1080,7 @@
 								<option value="LTU">Lithuania</option>
 								<option value="LUX">Luxembourg</option>
 								<option value="MAC">Macao</option>
-								<option value="MKD">Macedonia, the former Yugoslav
-									Republic of</option>
+								<option value="MKD">Macedonia, the former Yugoslav Republic of</option>
 								<option value="MDG">Madagascar</option>
 								<option value="MWI">Malawi</option>
 								<option value="MYS">Malaysia</option>
@@ -1112,8 +1134,7 @@
 								<option value="RUS">Russian Federation</option>
 								<option value="RWA">Rwanda</option>
 								<option value="BLM">Saint Barth�lemy</option>
-								<option value="SHN">Saint Helena, Ascension and Tristan
-									da Cunha</option>
+								<option value="SHN">Saint Helena, Ascension and Tristan da Cunha</option>
 								<option value="KNA">Saint Kitts and Nevis</option>
 								<option value="LCA">Saint Lucia</option>
 								<option value="MAF">Saint Martin (French part)</option>
@@ -1134,8 +1155,7 @@
 								<option value="SLB">Solomon Islands</option>
 								<option value="SOM">Somalia</option>
 								<option value="ZAF">South Africa</option>
-								<option value="SGS">South Georgia and the South
-									Sandwich Islands</option>
+								<option value="SGS">South Georgia and the South Sandwich Islands</option>
 								<option value="SSD">South Sudan</option>
 								<option value="ESP">Spain</option>
 								<option value="LKA">Sri Lanka</option>
@@ -1165,8 +1185,7 @@
 								<option value="ARE">United Arab Emirates</option>
 								<option value="GBR">United Kingdom</option>
 								<option value="USA">United States</option>
-								<option value="UMI">United States Minor Outlying
-									Islands</option>
+								<option value="UMI">United States Minor Outlying Islands</option>
 								<option value="URY">Uruguay</option>
 								<option value="UZB">Uzbekistan</option>
 								<option value="VUT">Vanuatu</option>
@@ -1184,10 +1203,8 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Close</button>
-					<button type=button onclick="postUser()" class="btn btn-primary"
-						data-dismiss="modal">Save</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type=button onclick="postUser()" class="btn btn-primary" data-dismiss="modal">Save</button>
 				</div>
 			</div>
 		</div>
@@ -1200,30 +1217,25 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="loginModalLongTitle">Login</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
 					<form>
 						<div class="form-group">
-							<label for="username">Username</label> <input type="text"
-								class="form-control" id="loginUsername"
-								placeholder="Enter username" required>
+							<label for="username">Username</label> 
+							<input type="text" class="form-control" id="loginUsername" placeholder="Enter username" required></input>
 						</div>
 						<div class="form-group">
-							<label for="password">Password</label> <input type="password"
-								class="form-control" id="loginPassword"
-								placeholder="Enter password" required>
+							<label for="password">Password</label> 
+							<input type="password" class="form-control" id="loginPassword" placeholder="Enter password" required></input>
 						</div>
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Close</button>
-					<input type="button" onclick="postLogin()" class="btn btn-primary"
-						value="Login" data-dismiss="modal">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<input type="button" onclick="postLogin()" class="btn btn-primary" value="Login" data-dismiss="modal"></input>
 				</div>
 			</div>
 		</div>

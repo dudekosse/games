@@ -43,28 +43,4 @@ app.controller('myCtrl2', function($scope, $http, $interval) {
 			}
 		}
 	}
-	
-	
-//	    color1 = style1[index];
-//	    color2 = style2[index];
-//	    if color2 == "black" {
-//	    	return {
-//	    		animation: test 1s infinite;
-//	    		@-webkit-keyframes test { from {color: blue;} to {color: purple;} } 
-//	    	}
-//	    	}
-//	    } else {
-//	    	return {
-//	    		td {
-//	    		    animation: name 2s infinite;
-//	    		}
-//
-//	    		@-webkit-keyframes name {
-//	    		    from {color: color1;}
-//	    		    to {color: color2;}
-//	    		}
-//	    	}
-//	    }
-	//}	
 });
-
