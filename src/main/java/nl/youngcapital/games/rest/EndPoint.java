@@ -75,6 +75,11 @@ public class EndPoint {
 		userService.updateEffect(effect, user);
 	}
 	
+	@GetMapping("/flash/{user}/{flash}")
+	public void updateFlash(@PathVariable String user, @PathVariable String flash) {
+		userService.updateFlash(flash, user);
+	}
+	
 	@GetMapping("/simplestyle/{user}/{style}")
 	public void updateSimpleStyle(@PathVariable String user, @PathVariable String style) {
 		userService.updateSimpleStyle(style, user);

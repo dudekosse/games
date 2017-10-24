@@ -60,7 +60,7 @@ function buyEffect() {
 
 function buyFlash() {
 	alert("Bought flash");
-	effect = document.getElementById("effect").value;;
+	flash = document.getElementById("flash").value;;
 	var xhttp1 = new XMLHttpRequest();
 	xhttp1.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -68,7 +68,7 @@ function buyFlash() {
 		}
 	};
 	var user = getCookie("username");
-	xhttp1.open("GET", "http://localhost:8082/effect/" + user + "/" + effect, true);
+	xhttp1.open("GET", "http://localhost:8082/flash/" + user + "/" + flash, true);
 	xhttp1.setRequestHeader("Content-type", "application/json");
 	xhttp1.send();
 }

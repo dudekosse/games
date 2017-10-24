@@ -42,6 +42,10 @@ public class UserService {
 		userrepository.updateEffect(effect, user);
 	}
 	
+	public void updateFlash(String flash, String user) {
+		userrepository.updateFlash(flash, user);
+	}
+	
 	public boolean knownUser(Iterable<User> knownUsers, User user) {
 		boolean check = false; 
 		for (User knownUser : knownUsers) {

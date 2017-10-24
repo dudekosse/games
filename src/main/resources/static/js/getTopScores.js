@@ -32,13 +32,12 @@ app.controller('myCtrl2', function($scope, $http, $interval) {
 		if(angular.isDefined(score)){
 			color = score.user.color;
 			effect = score.user.effect;
+			console.log(color);
 			if (color == "rainbow") {
-				console.log("same");
-				classes = String(effect) + " " + String(color);
-				console.log(classes);
-				return classes;
+				return String(effect) + " " + String(color);
+			} else if (color == "flash") {
+				return String(effect) + " " + String(color);
 			} else {
-				console.log("different")
 				return String(effect);
 			}
 		}
