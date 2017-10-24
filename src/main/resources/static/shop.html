@@ -45,35 +45,42 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
-			<h2>Purchase simple style - 50 coins</h2>
-				<select id="style">
-					<option value="blue" selected="selected" style="color:blue">Blue</option>
+			<h2>Purchase simple color - 50 coins</h2>
+				<select id="color">
+					<option value="NULL" selected="selected">No color</option>
+					<option value="blue" style="color:blue">Blue</option>
 					<option value="red" style="color:red">Red</option>
 					<option value="purple" style="color:purple">Purple</option>
 					<option value="yellow" style="color:yellow">Yellow</option>
 					<option value="pink" style="color:pink">Pink</option>
 				</select><br>
+				<button type=button onclick="buySimpleColor()" class="btn btn-primary">Buy simple color</button>
+				<br>
+				<br>
+			<h2>Purchase simple style - 100 coins</h2>
+				<select id="style">
+					<option value="NULL" selected="selected">No style</option>
+					<option value='bold' style="font-weight:bold">Bold</option>
+					<option value="oblique" style="font-style:oblique">Oblique</option>
+					<option value="underline" style="text-decoration:underline">Underline</option>
+				</select>
 				<button type=button onclick="buySimpleStyle()" class="btn btn-primary">Buy simple style</button>
 				<br>
 				<br>
-			<h2>Purchase animated style - 100 coins</h2>
-				<select id="style1">
-					<option value="blue" selected="selected" style="color:blue">Blue</option>
-					<option value="red" style="color:red">Red</option>
-					<option value="purple" style="color:purple">Purple</option>
-					<option value="yellow" style="color:yellow">Yellow</option>
-					<option value="pink" style="color:pink">Pink</option>
+			<h2>Purchase fancy style - 500 coins</h2>
+				<select id="fancy">
+					<option value='NULL' selected="selected">No fancy color</option>
+					<option value='rainbow'>Rainbow</option>
 				</select>
-				<select id="style2">
-					<option value="blue" selected="selected" style="color:blue">Blue</option>
-					<option value="red" style="color:red">Red</option>
-					<option value="purple" style="color:purple">Purple</option>
-					<option value="yellow" style="color:yellow">Yellow</option>
-					<option value="pink" style="color:pink">Pink</option>
-				</select><br>
-				<button type=button onclick="buyAnimatedStyle()" class="btn btn-primary">Buy animated style</button>
+				<button type=button onclick="buyFancyColor()" class="btn btn-primary">Buy fancy color</button>
 				<br>
-				<br>				
+				<br>	
+			<h2>Purchase effect - 500 coins</h2>
+				<select id="effect">
+					<option value='NULL' selected="selected">No effect</option>
+					<option value='pulsate'>Pulsate</option>
+				</select>
+				<button type=button onclick="buyEffect()" class="btn btn-primary">Buy effect</button>							
 				<h4>Shadow effects</h4>
 				<a style="text-shadow: 2px 2px black;" href="javascript:alert('Bought style');">SHADOW STYLE I</a><br>
 				<a style="text-shadow: 2px 2px blue;" href="javascript:alert('Bought style');">SHADOW STYLE II</a><br>

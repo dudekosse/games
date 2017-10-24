@@ -17,8 +17,9 @@ public class User {
 	private int age;
 	private String country;
 	private int goldCoins = 10;
-	private String style1 = "black";
-	private String style2 = "black";
+	private String color;
+	private String style;
+	private String effect;
 	
 //	@manyToOne()
 //	private Scores scores;
@@ -34,8 +35,8 @@ public class User {
 		this.password = password;
 	}
 
-	public User(Long id, String username, String password, int age, String country, int goldCoins, String style1,
-			String style2) {
+	public User(Long id, String username, String password, int age, String country, int goldCoins, String color,
+			String style, String effect) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -43,8 +44,9 @@ public class User {
 		this.age = age;
 		this.country = country;
 		this.goldCoins = goldCoins;
-		this.style1 = style1;
-		this.style2 = style2;
+		this.color = color;
+		this.style = style;
+		this.effect = effect;
 	}
 
 	public Long getId() {
@@ -87,22 +89,28 @@ public class User {
 	public void setGoldCoins(int goldCoins) {
 		this.goldCoins = goldCoins;
 	}
-	public String getStyle1() {
-		return style1;
-	}
-	public void setStyle1(String style1) {
-		this.style1 = style1;
-	}
-	public String getStyle2() {
-		return style2;
-	}
-	public void setStyle2(String style2) {
-		this.style2 = style2;
+
+	public String getColor() {
+		return color;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", age=" + age + ", country="
-				+ country + ", goldCoins=" + goldCoins + ", style1=" + style1 + ", style2=" + style2 + "]";
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getStyle() {
+		return style;
+	}
+
+	public void setStyle(String style) {
+		this.style = style;
+	}
+
+	public String getEffect() {
+		return effect;
+	}
+
+	public void setEffect(String effect) {
+		this.effect = effect;
 	}
 }

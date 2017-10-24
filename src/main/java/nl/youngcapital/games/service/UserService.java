@@ -26,12 +26,20 @@ public class UserService {
 		userrepository.updateCoins(coins, user);
 	}
 	
-	public void updateSimpleStyle(String style1, String user) {
-		userrepository.updateSimpleStyle(style1, user);
+	public void updateSimpleColor(String color, String user) {
+		userrepository.updateSimpleColor(color, user);
 	}
 	
-	public void updateAnimatedStyle(String style1, String style2, String user) {
-		userrepository.updateAnimatedStyle(style1, style2, user);
+	public void updateFancyColor(String color, String user) {
+		userrepository.updateFancyColor(color, user);
+	}
+	
+	public void updateSimpleStyle(String style, String user) {
+		userrepository.updateSimpleStyle(style, user);
+	}
+	
+	public void updateEffect(String effect, String user) {
+		userrepository.updateEffect(effect, user);
 	}
 	
 	public boolean knownUser(Iterable<User> knownUsers, User user) {

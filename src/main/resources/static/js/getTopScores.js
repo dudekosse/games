@@ -17,17 +17,33 @@ app.controller('myCtrl2', function($scope, $http, $interval) {
 			console.log("error")
 		});
 	};
-    /*$interval($scope.getScore,5000)*/
+    $interval($scope.getScore,5000);
 	
 	$scope.getScores();
-	$scope.setColor = function (score) {
+	$scope.setSimple = function (score) {
 		if(angular.isDefined(score)){
-		return "animation: mymove 2s infinite; @-webkit-keyframes mymove { from {color:" + score.user.style1 +
-		    "}, to: {color:" + score.user.style2 + "}}";
+			color = score.user.color;
+			style = score.user.style;
+			return {'color': color, 'font-weight': style, 'text-decoration': style, 'font-style': style}
 		};
-		console.log(score.user.style1);
-		return ("");
 	}
+	
+	$scope.setFancy = function (score) {
+		if(angular.isDefined(score)){
+			color = score.user.color;
+			effect = score.user.effect;
+			if (color == "rainbow") {
+				console.log("same");
+				classes = String(effect) + " " + String(color);
+				console.log(classes);
+				return classes;
+			} else {
+				console.log("different")
+				return String(effect);
+			}
+		}
+	}
+	
 	
 //	    color1 = style1[index];
 //	    color2 = style2[index];

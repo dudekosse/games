@@ -1,4 +1,5 @@
 function buyCoins() {
+	alert("Bought coins");
 	coins = document.getElementById("coins").value;;
 	var xhttp1 = new XMLHttpRequest();
 	xhttp1.onreadystatechange = function() {

@@ -70,13 +70,12 @@
   		<div ng-app="myApp2" ng-controller="myCtrl2">
   			<h4 id = highscoresTETRIS>Highscores</h4>
   			 <table>
-  				 <tbody ng-repeat="name in names track by $index">
+  				 <tbody ng-repeat="score in topscores">
   				 
 					<tr>
-  			 			<td>{{$index+1}}.</td>
-  			 			<td ng-style="setColor($index)">{{names[$index]}}</td>
+  			 			<td ng-style="setSimple(score)">{{score.user.username}}</td>
   			 			<td>&ensp;</td>
-  						 <td>{{scores[$index]}}</td>
+  						 <td>{{score.score}}</td>
 	  					<td ng-show="$first">
   						 	<i class="fa fa-trophy" aria-hidden="true">
   						 </td>
