@@ -48,9 +48,9 @@ public class GameService {
 		return gamerepository.findByTypeGameOrderByScoreDesc(typeGame);
 	};
 	
-	public int countGamesByType(TypeGame typeGame) {
-		return gamerepository.findByTypeGame(typeGame).size();
-	};
+//	public int countGamesByType(TypeGame typeGame) {
+//		return gamerepository.findByTypeGame(typeGame).size();
+//	};
 
 
 
