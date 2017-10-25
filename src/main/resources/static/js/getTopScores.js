@@ -3,8 +3,10 @@ function selectNamesAndScoresOfTop5(topScores) {
 }
 
 var app = angular.module('myApp2', []);
-app.controller('myCtrl2', function($scope, $http, $interval) {
-	var gameType = $('body').attr('id').toUpperCase(); 
+app.controller('myCtrl2', function($scope, $http, $interval, $attrs) {
+
+	var gameType = $attrs.game;
+
 	$scope.getScores = function(){
 		console.log("getting highscores"+"!!!!!");
 		$http({
@@ -17,8 +19,8 @@ app.controller('myCtrl2', function($scope, $http, $interval) {
 			console.log("error")
 		});
 	};
-    $interval($scope.getScore,5000);
-	
+    //$interval($scope.getScore,5000);
+  //  $scope.getScore
 	$scope.getScores();
 	$scope.setSimple = function (score) {
 		if(angular.isDefined(score)){
