@@ -1,6 +1,6 @@
 function postGame(game,plays,wins,user){
-    //curUser = checkCookie();
-    var curUser = checkCookie().length > 0 ? checkCookie() : "anonymous";
+    curUser = checkCookie();
+    //var curUser = checkCookie().length > 0 ? checkCookie() : "anonymous";
     
     var xhttp = new XMLHttpRequest();
     
@@ -14,10 +14,7 @@ function getUserByCookie(curUser, gameInfo) {
 	
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			console.log(curUser + " in getusercookie")
-
-			gameInfo.user = JSON.parse(this.responseText);
-			
+			gameInfo.user = JSON.parse(this.responseText);		
 			postGameAndUser(gameInfo)
 		}
 	};
@@ -32,14 +29,10 @@ function postGameAndUser(gameInfo) {
 
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			alert("in readystate");
 		}
 	};
 	
 	//userObj = getUserByCookie(user);
-	var curUser = "bas";  //hardcode
-	//console.log("een test")
-	//xhttp.open("POST", "http://localhost:8082/gamepost" + curUser, true);
 	xhttp.open("POST", "http://localhost:8082/gamepost", true);
 	xhttp.setRequestHeader("Content-type", "application/json");
 	xhttp.send(JSON.stringify(gameInfo));

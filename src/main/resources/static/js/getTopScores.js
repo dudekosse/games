@@ -8,7 +8,6 @@ app.controller('myCtrl2', function($scope, $http, $interval, $attrs) {
 	var gameType = $attrs.game;
 
 	$scope.getScores = function(){
-		console.log("getting highscores"+"!!!!!");
 		$http({
 			url: "/getHighscores",
 			type: "GET",
@@ -19,9 +18,9 @@ app.controller('myCtrl2', function($scope, $http, $interval, $attrs) {
 			console.log("error")
 		});
 	};
-    //$interval($scope.getScore,5000);
+	$scope.getScores();	
+    $interval($scope.getScores,5000);
   //  $scope.getScore
-	$scope.getScores();
 	$scope.setSimple = function (score) {
 		if(angular.isDefined(score)){
 			color = score.user.color;
