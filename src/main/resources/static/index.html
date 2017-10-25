@@ -2,7 +2,7 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>Games application</title>
-	
+
 	<!-- BOOTSTRAP + JQuery + Popper plugins-->
 	<link rel="stylesheet"
 		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
@@ -26,6 +26,7 @@
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
 		integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
 		crossorigin="anonymous"></script>
+		
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
 		integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
@@ -151,7 +152,7 @@
 				<ul class="navbar-nav">
 					<li class="navbar-item"><a class="navbar-brand"
 						href="#homepage">Home</a></li>
-					<li ng-click = app() id="tictactoe" class="nav-item isOnlyShownWhenLoggedIn"><a
+					<li class="nav-item isOnlyShownWhenLoggedIn"><a
 						class="nav-link" href="#tictactoepage">Tic Tac Toe</a></li>
 					<li class="nav-item isOnlyShownWhenLoggedIn"><a
 						class="nav-link" href=#tetrispage>Tetris</a></li>
@@ -237,6 +238,7 @@
 						</div>
 					</div>
 				</div>
+				
 			</div>
 			<script>
 				//-------------------------------------------------------------------------
@@ -612,7 +614,6 @@
 				function drawNext() {
 				  if (invalid.next) {
 					var padding = (nu - next.type.size) / 2; // half-arsed attempt at
-					</div>
 										// centering next piece
 																// display
 					uctx.save();
