@@ -136,7 +136,7 @@ function draw1() {
             if(!lives) {
                 console.log("GAME OVER");
                 postGame("BREAKOUT",1,boscore,"TEST")
-                document.location.reload();
+               // document.location.reload();
             }
             else {
                 x = bocanvas.width/2;
