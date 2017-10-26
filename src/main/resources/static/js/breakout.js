@@ -3,8 +3,8 @@ var boctx = bocanvas.getContext("2d");
 var ballRadius = 10;
 var x = bocanvas.width/2;
 var y = bocanvas.height-30;
-var dx = 6;
-var dy = -6;
+var bodx = 6;
+var dybo = -6;
 var paddleHeight = 10;
 var paddleWidth = 75;
 var paddleX = (bocanvas.width-paddleWidth)/2;
@@ -57,7 +57,7 @@ function collisionDetection() {
             var b = bricks[c][r];
             if(b.status == 1) {
                 if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
-                    dy = -dy;
+                    dybo = -dybo;
                     b.status = 0;
                     boscore++;
                     if(boscore == brickRowCount*brickColumnCount) {
@@ -121,28 +121,28 @@ function draw1() {
     
     
     
-    if(x + dx > bocanvas.width-ballRadius || x + dx < ballRadius) {
-        dx = -dx;
+    if(x + bodx > bocanvas.width-ballRadius || x + bodx < ballRadius) {
+        bodx = -bodx;
     }
-    if(y + dy < ballRadius) {
-        dy = -dy;
+    if(y + dybo < ballRadius) {
+        dybo = -dybo;
     }
-    else if(y + dy > bocanvas.height-ballRadius) {
+    else if(y + dybo > bocanvas.height-ballRadius) {
         if(x > paddleX && x < paddleX + paddleWidth) {
-            dy = -dy;
+            dybo = -dybo;
         }
         else {
             lives--;
             if(!lives) {
                 console.log("GAME OVER");
                 postGame("BREAKOUT",1,boscore,"TEST")
-               // document.location.reload();
+                document.location.reload();
             }
             else {
                 x = bocanvas.width/2;
                 y = bocanvas.height-30;
-                dx = 6;
-                dy = -6;
+                bodx = 6;
+                dybo = -6;
                 paddleX = (bocanvas.width-paddleWidth)/2;
             }
         }
@@ -153,7 +153,7 @@ function draw1() {
     else if(leftPressed && paddleX > 0) {
         paddleX -= 7;
     }
-    x += dx;
-    y += dy;
+    x += bodx;
+    y += dybo;
     requestAnimationFrame(draw1);
 }

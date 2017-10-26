@@ -1,6 +1,6 @@
 
-var mycanvas = document.getElementById('snakeCanvas');
-var ctx1 = mycanvas.getContext('2d');
+var snakeCanvas = document.getElementById('snakeCanvas');
+var snakeCtx = snakeCanvas.getContext('2d');
 
 var snakeSize = 10; 
 var w = 350;
@@ -13,23 +13,23 @@ var food;
 var drawModule = (function () { 
 
 	  var bodySnake = function(x, y) {
-	        ctx1.fillStyle = 'green';
-	        ctx1.fillRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
-	        ctx1.strokeStyle = 'darkgreen';
-	        ctx1.strokeRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
+	        snakeCtx.fillStyle = 'green';
+	        snakeCtx.fillRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
+	        snakeCtx.strokeStyle = 'darkgreen';
+	        snakeCtx.strokeRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
 	  }
 
 	  var pizza = function(x, y) {
-	        ctx1.fillStyle = 'yellow';
-	        ctx1.fillRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
-	        ctx1.fillStyle = 'red';
-	        ctx1.fillRect(x*snakeSize+1, y*snakeSize+1, snakeSize-2, snakeSize-2);
+	        snakeCtx.fillStyle = 'yellow';
+	        snakeCtx.fillRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
+	        snakeCtx.fillStyle = 'red';
+	        snakeCtx.fillRect(x*snakeSize+1, y*snakeSize+1, snakeSize-2, snakeSize-2);
 	  }
 
 	  var scoreText = function() {
 	    var score_text = "Score: " + snakeScore;
-	    ctx1.fillStyle = 'blue';
-	    ctx1.fillText(score_text, 145, h-5);
+	    snakeCtx.fillStyle = 'blue';
+	    snakeCtx.fillText(score_text, 145, h-5);
 	  }
 
 	  var drawSnake = function() {
@@ -41,10 +41,10 @@ var drawModule = (function () {
 	  }
 	    
 	  var paint = function(){
-	      ctx1.fillStyle = 'lightgrey';
-	      ctx1.fillRect(0, 0, w, h);
-	      ctx1.strokeStyle = 'black';
-	      ctx1.strokeRect(0, 0, w, h);
+	      snakeCtx.fillStyle = 'lightgrey';
+	      snakeCtx.fillRect(0, 0, w, h);
+	      snakeCtx.strokeStyle = 'black';
+	      snakeCtx.strokeRect(0, 0, w, h);
 
 	      btn.setAttribute('disabled', true);
 
@@ -66,7 +66,7 @@ var drawModule = (function () {
 	    	  postGame("SNAKE",1,snakeScore,"TEST")
 	          btn.removeAttribute('disabled', true);
 
-	          ctx1.clearRect(0,0,w,h);
+	          snakeCtx.clearRect(0,0,w,h);
 	          gameloop = clearInterval(gameloop);
 	          return;          
 	        }
