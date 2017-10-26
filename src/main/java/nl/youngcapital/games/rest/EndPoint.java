@@ -46,9 +46,19 @@ public class EndPoint {
 	@ResponseBody
 	@GetMapping("/userget{name}")
 	public User getUser(@PathVariable String name) {
+		System.out.println(name + "!!!");
 		return userService.getUser(name);
 	}
 
+//	@ResponseBody
+//	@GetMapping("/userrget")
+//	public User getUser2(@PathVariable String name) {
+//		System.out.println("\n");
+//		System.out.println(name + "!?????!");
+//		return userService.getUser(name);
+//	}
+
+	
 	@PostMapping("/gamepost{name}")
 	public String postGame(@RequestBody Game game, @PathVariable String name) {
 			gameService.add(game);

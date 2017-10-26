@@ -1,13 +1,8 @@
 /**
  * 
  */
-function getUserCoins() {
-		userCoins = ;
-	return userCoins();
-}	
-
 function getUserCoins(gameInfo) {
-	var user = getUser(checkCookie());
+	var curUser = checkCookie();
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
