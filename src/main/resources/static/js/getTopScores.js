@@ -19,8 +19,7 @@ app.controller('myCtrl2', function($scope, $http, $interval, $attrs) {
 		});
 	};
 	$scope.getScores();	
-    $interval($scope.getScores,5000);
-  //  $scope.getScore
+   // $interval($scope.getScores,5000);
 	$scope.setSimple = function (score) {
 		if(angular.isDefined(score)){
 			color = score.user.color;

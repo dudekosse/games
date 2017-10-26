@@ -20,27 +20,6 @@ public class GameService {
 		gamerepository.save(game);
 		return game;
 	}
-
-	public void updateTable(Game game) {
-		gamerepository.updateTable(game.getTimesPlayed(),game.getTypeGame().toString());
-	}
-	
-	public void updateHighscore(Game game) {
-		gamerepository.updateHighscore(game.getScore(),game.getScore(), game.getTypeGame().toString());
-	}
-	
-	public boolean checkType(String type) {
-		if (gamerepository.checkType(type).size() > 0) {
-			return true;
-		} else {
-			return false;
-		}	
-	}
-	
-	public void updateHighscoreName(String name, Game game) {
-		gamerepository.updateHighscoreName(name, game.getTypeGame().toString());
-	}
-
 	
 	public ArrayList<Game> getTopScores(TypeGame typeGame) {
 //		ArrayList<Game> sortedGames = gamerepository.findByTypeGameOrderByScoreDesc(typeGame);

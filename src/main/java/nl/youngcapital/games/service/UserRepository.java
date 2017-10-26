@@ -46,4 +46,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
 	@Query(value ="select * from user where username = ?",nativeQuery = true)
 	public User getUser(String username);
 	
+	@Query(value = "select goldCoins from User where username = ?", nativeQuery = true)
+	public int selectGoldCoins(String username);
+	
 }
