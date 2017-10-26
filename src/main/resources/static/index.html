@@ -49,10 +49,45 @@
 	<script src="../js/postUser.js"></script>
 	<script src="../js/stats.js"></script>
 	<script src="../js/ticTacToe.js"></script>
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+
+  window.addEventListener('load', function() {
+    var form = document.getElementById('needs-validation');
+    form.addEventListener('submit', function(event) {
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  }, false);
+})();
+</script>
 	
 	<style>
 	* { padding: 0; margin: 0; } canvas.breakout { background: #eee; display: block; margin: 0 auto; }
 	
+	#tetrisImage {
+	display: inline;
+	margin-right: 150px;
+
+	}
+	
+	#tictactoeImage {
+	display: inline;
+		margin-right: 150px;
+	
+	}
+	
+	#snakeImage {
+	display: inline;
+	
+	}
+	
+	 
 	 #home {
       width: 350px;
       height: 350px;
@@ -65,27 +100,6 @@
       margin: 03;
 
     }
-    
-    button {
-      background-color: green;
-      color: white;
-      border: none;
-      bottom: 0;
-      height: 30px;
-      font-size: 12pt;
-      float: left;
-      width: 90px;
-      margin: 10px 0 0 0;
-    }
-    button:hover {
-      background-color: orange;
-    }
-
-    button:disabled {
-      background-color: grey;
-    }
-
- 
 
     .game {
       margin: 0 auto;
@@ -217,10 +231,18 @@
 		<!-- HOME -->
 		<div id="homepage">
 			<div class="jumbotron jumbotron-fluid">
-				<div class="container">
-					<h1 class="display-3">Welcome</h1>
-					<p class="lead">Welcome to the best website in the world.</p>
+				<div class="container isOnlyShownWhenLoggedOut ">
+					<h1 class="display-3 ">GAMESCORE</h1>
+					<p class="lead">Register or login to play our games!</p>
 				</div>
+					<h1 class="container display-3 row justify-content-md-center isOnlyShownWhenLoggedIn">Play a game or go shopping!</h1>
+			</div>
+			
+			<div class="container isOnlyShownWhenloggedIn">	
+			<img id="tetrisImage" src="https://metrouk2.files.wordpress.com/2015/08/tetris-gif.gif" alt="tetris" style="width:200px;height:300px;">
+			<img id="tictactoeImage" src="https://zippy.gfycat.com/DarkWeightyAnemoneshrimp.gif" alt="tictactoe" style="width:200px;height:300px;">
+			<img id="snakeImage" src="https://forums.imore.com/attachments/iphone-apps-games/89090d1440584743t-snake-2-5d-only-best-snake-game-ever-here-comes-boom640px.gif" alt="snake" style="width:200px;height:300px;">
+			
 			</div>
 	
 			<div class="container">
@@ -510,8 +532,8 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">
-					<form>
+				<form>
+					<div class="modal-body">
 						<div class="form-group">
 							<label for="username">Username</label>
 							<input type="text" class="form-control" id="username" placeholder="Enter username" required></input>
@@ -913,12 +935,12 @@
 								<option value="ZWE">Zimbabwe</option>
 							</select>
 						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type=button onclick="postUser()" class="btn btn-primary" data-dismiss="modal">Save</button>
-				</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" onclick="postUser()" class="btn btn-primary" data-dismiss="modal">Save</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -934,22 +956,22 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">
-					<form>
-						<div class="form-group">
-							<label for="username">Username</label> 
-							<input type="text" class="form-control" id="loginUsername" placeholder="Enter username" required></input>
-						</div>
-						<div class="form-group">
-							<label for="password">Password</label> 
-							<input type="password" class="form-control" id="loginPassword" placeholder="Enter password" required></input>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<input type="button" onclick="postLogin()" class="btn btn-primary" value="Login" data-dismiss="modal"></input>
-				</div>
+				<form>
+					<div class="modal-body">
+					<div class="form-group">
+						<label for="username">Username</label> 
+						<input type="text" class="form-control" id="loginUsername" placeholder="Enter username" required></input>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label> 
+						<input type="password" class="form-control" id="loginPassword" placeholder="Enter password" required></input>
+					</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<input type="submit" onclick="postLogin()" class="btn btn-primary" value="Login" data-dismiss="modal"></input>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
