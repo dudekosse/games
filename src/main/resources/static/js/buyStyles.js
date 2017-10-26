@@ -14,6 +14,10 @@ function buySimpleColor() {
 }
 
 function buySimpleStyle() {
+	var ss = 100;
+	if (getUserCoins() < ss) {
+		alert("not enough coins");
+	}
 	alert("Bought simple style");
 	style = document.getElementById("style").value;;
 	var xhttp1 = new XMLHttpRequest();
