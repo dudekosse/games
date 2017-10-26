@@ -49,15 +49,6 @@ public class EndPoint {
 		System.out.println(name + "!!!");
 		return userService.getUser(name);
 	}
-
-//	@ResponseBody
-//	@GetMapping("/userrget")
-//	public User getUser2(@PathVariable String name) {
-//		System.out.println("\n");
-//		System.out.println(name + "!?????!");
-//		return userService.getUser(name);
-//	}
-
 	
 	@PostMapping("/gamepost{name}")
 	public String postGame(@RequestBody Game game, @PathVariable String name) {
@@ -70,12 +61,15 @@ public class EndPoint {
 		userService.updateCoins(coins, user);
 	}
 	
-	@GetMapping("/simplecolor/{user}/{color}")
+	@PostMapping("/simplecolor/{user}/{color}")
 	public void updateSimpleColor(@PathVariable String user, @PathVariable String color) {
+		System.out.print(user + " the user");
+		System.out.print(color + " the user");
+
 		userService.updateSimpleColor(color, user);
 	}
 	
-	@GetMapping("/fancycolor/{user}/{color}")
+	@PostMapping("/fancycolor/{user}/{color}")
 	public void updateFancyColor(@PathVariable String user, @PathVariable String color) {
 		userService.updateFancyColor(color, user);
 	}
@@ -90,22 +84,11 @@ public class EndPoint {
 		userService.updateFlash(flash, user);
 	}
 	
-	@GetMapping("/simplestyle/{user}/{style}")
+	@PostMapping("/simplestyle/{user}/{style}")
 	public void updateSimpleStyle(@PathVariable String user, @PathVariable String style) {
 		userService.updateSimpleStyle(style, user);
 	}
 	
-//	@PostMapping("/gamepost{name}")
-//	public String postGame(@RequestBody Game game, @PathVariable String name) {
-//		String name = game.getUser().getUsername();
-//		if (gameService.checkType(game.getTypeGame().toString())) {
-//			gameService.updateTable(game);		
-//			gameService.updateHighscore(game);
-//			gameService.updateHighscoreName(name,game);
-//		} else {
-//			gameService.add(game);
-//	}
-
 	
 	@ResponseBody
 	@GetMapping("/getHighscores{type}")

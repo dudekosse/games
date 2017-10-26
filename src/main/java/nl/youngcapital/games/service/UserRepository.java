@@ -25,7 +25,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
 	
 	@Transactional
 	@Modifying
-	@Query("UPDATE User SET color = ?, gold_coins = gold_coins - 500 where username = ?")
+	@Query("UPDATE User SET color = ?, gold_coins = gold_coins + 50000 where username = ?")
 	public void updateFancyColor(String color, String username);
 	
 	@Transactional

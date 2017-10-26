@@ -33,8 +33,9 @@
 		crossorigin="anonymous"></script>
 		
 	<!-- Own scripts -->
+	
+	<script src="js/buyStyles.js"></script>
 	<script src="../js/buyCoins.js"></script>
-	<script src="../js/buyStyles.js"></script>
 	<script src="../js/cookieFactory.js"></script>
 	<script src="../js/fancyStyle.js"></script>
 	<script src="../js/getGame.js"></script>
@@ -49,25 +50,14 @@
 	<script src="../js/postUser.js"></script>
 	<script src="../js/stats.js"></script>
 	<script src="../js/ticTacToe.js"></script>
-<script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
 
-  window.addEventListener('load', function() {
-    var form = document.getElementById('needs-validation');
-    form.addEventListener('submit', function(event) {
-      if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      form.classList.add('was-validated');
-    }, false);
-  }, false);
-})();
-</script>
 	
 	<style>
+		.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;border:none;margin:0px auto;}
+		.tg td{font-family:Arial, sans-serif;font-size:26px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+		.tg th{font-family:Arial, sans-serif;font-size:26px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+		.tg .tg-yw4l{vertical-align:top}
+          
 	* { padding: 0; margin: 0; } canvas.breakout { background: #eee; display: block; margin: 0 auto; }
 	
 	#tetrisImage {
@@ -212,9 +202,7 @@
 					<li class="nav-item isOnlyShownWhenLoggedIn"><a
 						class="nav-link" href=#tetrispage>Tetris</a></li>
 					<li class="nav-item isOnlyShownWhenLoggedIn"><a
-						class="nav-link" href="#snakepage">Snake</a></li>
-					<li class="nav-item isOnlyShownWhenLoggedIn"><a
-						class="nav-link" href="#breakoutpage">Breakout</a></li>						
+						class="nav-link" href="#snakepage">Snake</a></li>				
 					<li class="nav-item isOnlyShownWhenLoggedIn"><a
 						class="nav-link" href="#shoppage">Shop</a></li>
 					<li class="nav-item isOnlyShownWhenLoggedIn"><button
@@ -391,44 +379,8 @@
 					</div>
 				</div>
 			</div>
-		</div>
-				<!-- TIC TAC TOE -->
-		<div id="breakoutpage">
-			<div class="jumbotron jumbotron-fluid">
-			  <div class="container">
-				<h1 class="display-3">Breakout</h1>
-				<p class="lead">Increase your highscore.</p>
-			  </div>
-			</div>			
-			<div class="container">	
-				<div class="row justify-content-md-center">
-					<div class="col-md-4">
-						<canvas class="breakout" id="breakoutCanvas" width="440" height="300"></canvas>
-						<button onclick='draw1()'>START</button>
-					</div>
-						
-					<div class="col-md-2">
-						<h4 id ="highscoresBREAKOUT">Highscores</h4>
-						<div ng-controller="myCtrl2" game="BREAKOUT")">
-						<table>
-							<tbody ng-repeat="score in topscores">
-								<tr>
-									<td ng-style=setSimple(score)><span ng-class=setFancy(score)>{{score.user.username}}</span></td>
-			  			 			<td>&ensp;</td>
-			  						 <td>{{score.score}}</td>
-				  					<td ng-show="$first">
-			  						 	<i class="fa fa-trophy" aria-hidden="true"></i>
-			  						 </td>
-								</tr>
-							</tbody>
-						</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-    	<script src="../js/breakout.js"></script>		
-	</div>
+		</div>	
+	
 		
 			
 		<!-- SHOP -->	
@@ -442,81 +394,105 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<h2>Purchase simple color - 50 coins</h2>
-							<select id="color">
-								<option value="NULL" selected="selected">No color</option>
-								<option value="blue" style="color:blue">Blue</option>
-								<option value="red" style="color:red">Red</option>
-								<option value="purple" style="color:purple">Purple</option>
-								<option value="yellow" style="color:yellow">Yellow</option>
-								<option value="pink" style="color:pink">Pink</option>
-							</select><br>
-							<button type=button onclick="buySimpleColor()" class="btn btn-primary">Buy simple color</button>
-							<br>
-							<br>
-						<h2>Purchase simple style - 100 coins</h2>
-							<select id="style">
-								<option value="NULL" selected="selected">No style</option>
-								<option value='bold' style="font-weight:bold">Bold</option>
-								<option value="oblique" style="font-style:oblique">Oblique</option>
-								<option value="underline" style="text-decoration:underline">Underline</option>
-							</select>
-							<button type=button onclick="buySimpleStyle()" class="btn btn-primary">Buy simple style</button>
-							<br>
-							<br>
-						<h2>Purchase fancy style - 500 coins</h2>
-							<select id="fancy">
-								<option value='NULL' selected="selected">No fancy color</option>
-								<option value='rainbow'>Rainbow</option>
-							</select>
-							<button type=button onclick="buyFancyColor()" class="btn btn-primary">Buy fancy color</button>
-							<br>
-							<br>	
-						<h2>Purchase effect - 500 coins</h2>
-							<select id="effect">
-								<option value='NULL' selected="selected">No effect</option>
-								<option value='pulsate'>Pulsate</option>
-							</select>
-							<button type=button onclick="buyEffect()" class="btn btn-primary">Buy effect</button>							
-							<h4>Shadow effects</h4>
-							<a style="text-shadow: 2px 2px black;" href="javascript:alert('Bought style');">SHADOW STYLE I</a><br>
-							<a style="text-shadow: 2px 2px blue;" href="javascript:alert('Bought style');">SHADOW STYLE II</a><br>
-							<a style="text-shadow: 2px 2px red;" href="javascript:alert('Bought style');">SHADOW STYLE III</a><br>
-							<a style="text-shadow: 2px 2px purple;" href="javascript:alert('Bought style');">SHADOW STYLE IV</a><br>
-							<a style="text-shadow: 2px 2px yellow;" href="javascript:alert('Bought style');">SHADOW STYLE V</a><br>
+
+          
+          <table class="tg">
+						  <tr>
+						    <th class="tg-031e">Colors<br>100 Gold Coins</th>
+						  </tr>
+						  <tr>
+						    <td class="tg-yw4l">
+							    <select id="color">
+									<option value="NULL" selected="selected">No color</option>
+									<option value="red">Red</option>
+									<option value="yellow">Yellow</option>
+									<option value="green">Green</option>
+									<option value="blue">Blue</option>
+									<option value="orange">Orange</option>
+								</select>
+						    </td>
+						  </tr>
+						  <tr>
+						    <td class="tg-yw4l">
+							<button type=button onclick="buyStyle('simpelColor',50)" class="btn btn-primary">Buy simple color</button>
+						    </td>
+						  </tr>
+						
+            
+            
+            </table>
 						<br>
-							<h4>Keyboard effects</h4>
-							<a href="javascript:alert('Bought style');"><kbd>KEYBOARD STYLE</kbd></a><br>
 						<br>
-							<h4>Background effects</h4>
-							<a class="bg-primary" href="javascript:alert('Bought style');">BACKGROUND STYLE I</a><br>
-							<a class="bg-success" href="javascript:alert('Bought style');">BACKGROUND STYLE II</a><br>
-							<a class="bg-info" href="javascript:alert('Bought style');">BACKGROUND STYLE III</a><br>
-							<a class="bg-warning" href="javascript:alert('Bought style');">BACKGROUND STYLE IV</a><br>
-							<a class="bg-danger" href="javascript:alert('Bought style');">BACKGROUND STYLE V</a><br>
+						<table class="tg">
+						  <tr>
+						    <th class="tg-031e">Styles<br>100 Gold Coins</th>
+						  </tr>
+						  <tr>
+						    <td class="tg-yw4l">
+							    <select id="style">
+									<option value="NULL" selected="selected">No style</option>
+									<option value='bold'>Bold</option>
+									<option value="oblique">Oblique</option>
+									<option value="underline">Underline</option>
+								</select>
+						    </td>
+						  </tr>
+						  <tr>
+						    <td class="tg-yw4l">
+							<button type=button onclick="buyStyle('simpleStyle',100)" class="btn btn-primary">Buy simple style</button>
+						    </td>
+						  </tr>
+						
+            
+            
+            </table>
 						<br>
-							<h4>Color effects</h4>
-							<a class="text-muted" href="javascript:alert('Bought style');">TEXT STYLE I</a><br>
-							<a class="text-primary" href="javascript:alert('Bought style');">TEXT STYLE II</a><br>
-							<a class="text-success" href="javascript:alert('Bought style');">TEXT STYLE III</a><br>
-							<a class="text-info" href="javascript:alert('Bought style');">TEXT STYLE IV</a><br>
-							<a class="text-warning" href="javascript:alert('Bought style');">TEXT STYLE V</a><br>
-							<a class="text-danger" href="javascript:alert('Bought style');">TEXT STYLE VI</a><br>
-							<a class="null" href="javascript:alert('Bought style');">TEXT STYLE VI</a><br>
 						<br>
-						<h2>Buy gold coins</h2>
-						<select id="coins">
-							<option value="10" selected="selected">€10 - 10 coins</option>
-							<option value="22">€20 - 22 coins</option>
-							<option value="35">€30 - 35 coins</option>
-							<option value="48">€40 - 48 coins</option>
-							<option value="60">€50 - 60 coins</option>
-						</select>
-						<button type=button onclick="buyCoins()" class="btn btn-primary">Buy coins</button>
+						<table class="tg">
+						  <tr>
+            <th class="tg-031e">Rainbow<br>500 Gold Coins</th>
+						  </tr>
+						  <tr>
+						    <td class="tg-yw4l">
+							    <select id="fancy">
+									<option value='NULL' selected="selected">No color</option>
+									<option value='rainbow'>Rainbow</option>
+								</select>
+						    </td>
+						  </tr>
+						  <tr>
+						    <td class="tg-yw4l">
+							<button id = "fancycolor" type=button onclick="buyStyle('fancycolor',500)" class="btn btn-primary">Buy fancy color</button>
+						    </td>
+						  </tr>
+						</table>
+						<br>
+						<br>
+					
+          <table class="tg">
+						  <tr>
+						    <th class="tg-031e">Gold Coins<br>Real Currency:<br>10 eu for 50<br>20 eu for 100<br>30 eu for 200</th>
+						  </tr>
+						  <tr>
+						    <td class="tg-yw4l">
+							    <select id="coins">
+									<option value="50" selected="selected">50 coins</option>
+									<option value="100">100 coins</option>
+									<option value="200">200 coins</option>
+								</select>
+						    </td>
+						  </tr>
+						  <tr>
+						    <td class="tg-yw4l">
+							    <button type=button onclick="buyCoins()" class="btn btn-primary">Buy gold coins</button>
+						    </td>
+						  </tr>
+						</table>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>	
+	</div>	
 	</div>
 	
 	<!-- Register Modal -->

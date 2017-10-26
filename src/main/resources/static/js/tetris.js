@@ -207,7 +207,6 @@ function keydown(ev) {
 // -------------------------------------------------------------------------
 
 function play() { 
-	alert("test")
 	hide('start'); reset();          playing = true;  }
 function lose() { show('start'); setVisualScore(); playing = false; postGame("TETRIS",1,score,"TEST")}
 

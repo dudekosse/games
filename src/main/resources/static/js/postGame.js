@@ -1,6 +1,5 @@
 function postGame(game,plays,wins,user){
     curUser = checkCookie();
-    console.log(game)
     var xhttp = new XMLHttpRequest();
     
     gameInfo = '{"typeGame": "'+game+'","timesPlayed": "'+plays+'","score":"'+wins+'","user":"'+""+'"}';
