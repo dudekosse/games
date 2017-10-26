@@ -52,13 +52,16 @@ function endGame(status) {
 	plays+=1	
 	if (status == "W") {
 		wins +=1;
-		reset();
+		reset1();
 		alert("in end wins: " + wins)
-	} else {		
+	} else {	
+		alert("in end loses: " + wins)
+
 		postGame("TIC_TAC_TOE",plays,wins,"test");
+		console.log("test")
 		plays = 0;
 		wins = 0;
-		reset();
+		reset1();
 	}
 }
 
@@ -73,49 +76,49 @@ function check()
   {
 	  endGame(status)
 //    alert("You Win!")
-//    reset()
+//    reset1()
   } 
   else if(sqr7 == " X " && sqr8 == " X " && sqr9 == " X ")
   {
 	  endGame(status)
 //    alert("You Win!")
-//    reset()
+//    reset1()
   }
   else if(sqr1 == " X " && sqr5 == " X " && sqr9 == " X ")
   {
 	  endGame(status)
 //    alert("You Win!")
-//    reset()
+//    reset1()
   }
   else if(sqr1 == " X " && sqr4 == " X " && sqr7 == " X ")
   {
 	  endGame(status)
 //    alert("You Win!")
-//    reset()
+//    reset1()
   }
   else if(sqr2 == " X " && sqr5 == " X " && sqr8 == " X ")
   {
 	  endGame(status)
 //    alert("You Win!")
-//    reset()
+//    reset1()
   }
   else if(sqr3 == " X " && sqr6 == " X " && sqr9 == " X ")
   {
 	  endGame(status)
 //    alert("You Win!")
-//    reset()
+//    reset1()
   }
   else if(sqr1 == " X " && sqr5 == " X " && sqr9 == " X ")
   {
 	  endGame(status)
 //    alert("You Win!")
-//    reset()
+//    reset1()
   }
   else if(sqr3 == " X " && sqr5 == " X " && sqr7 == " X ")
   {
 	  endGame(status)
 //    alert("You Win!")
-//    reset()
+//    reset1()
   }
   else
   {
@@ -133,56 +136,56 @@ function check2()
   if(sqr1 == " O " && sqr2 == " O " && sqr3 == " O ")
   {
 //    alert("You Lose!")
-//    reset()
+//    reset1()
 	  endGame(status)
   } 
   else if(sqr4 == " O " && sqr5 == " O " && sqr6 == " O ")
   {
 //    alert("You Lose!")
-//    reset()
+//    reset1()
 	  endGame(status)
   } 
   else if(sqr7 == " O " && sqr8 == " O " && sqr9 == " O ")
   {
 //    alert("You Lose!")
-//    reset()
+//    reset1()
 	  endGame(status)
 	  
   }
   else if(sqr1 == " O " && sqr5 == " O " && sqr9 == " O ")
   {
 //    alert("You Lose!")
-//    reset()
+//    reset1()
 	  endGame(status)
   }
   else if(sqr1 == " O " && sqr4 == " O " && sqr7 == " O ")
   {
 //    alert("You Lose!")
-//    reset()
+//    reset1()
 	  endGame(status)
   }
   else if(sqr2 == " O " && sqr5 == " O " && sqr8 == " O ")
   {
 //    alert("You Lose!")
-//    reset()
+//    reset1()
 	  endGame(status)
   }
   else if(sqr3 == " O " && sqr6 == " O " && sqr9 == " O ")
   {
 //    alert("You Lose!")
-//    reset()
+//    reset1()
 	  endGame(status)
   }
   else if(sqr1 == " O " && sqr5 == " O " && sqr9 == " O ")
   {
 //    alert("You Lose!")
-//    reset()
+//    reset1()
 	  endGame(status)
   }
   else if(sqr3 == " O " && sqr5 == " O " && sqr7 == " O ")
   {
 //    alert("You Lose!")
-//    reset()
+//    reset1()
 	  endGame(status)
   }
 }
@@ -192,47 +195,47 @@ function player1Check()
   if(sqr1 == " X " && sqr2 == " X " && sqr3 == " X ")
   {
     alert("Player 1 wins!")
-    reset()
+    reset1()
   } 
   else if(sqr4 == " X " && sqr5 == " X " && sqr6 == " X ")
   {
     alert("Player 1 wins!")
-    reset()
+    reset1()
   } 
   else if(sqr7 == " X " && sqr8 == " X " && sqr9 == " X ")
   {
     alert("Player 1 wins!")
-    reset()
+    reset1()
   }
   else if(sqr1 == " X " && sqr5 == " X " && sqr9 == " X ")
   {
     alert("Player 1 wins!")
-    reset()
+    reset1()
   }
   else if(sqr1 == " X " && sqr4 == " X " && sqr7 == " X ")
   {
     alert("Player 1 wins!")
-    reset()
+    reset1()
   }
   else if(sqr2 == " X " && sqr5 == " X " && sqr8 == " X ")
   {
     alert("Player 1 wins!")
-    reset()
+    reset1()
   }
   else if(sqr3 == " X " && sqr6 == " X " && sqr9 == " X ")
   {
     alert("Player 1 wins!")
-    reset()
+    reset1()
   }
   else if(sqr1 == " X " && sqr5 == " X " && sqr9 == " X ")
   {
     alert("Player 1 wins!")
-    reset()
+    reset1()
   }
   else if(sqr3 == " X " && sqr5 == " X " && sqr7 == " X ")
   {
     alert("Player 1 wins!")
-    reset()
+    reset1()
   }
   else
   {
@@ -248,47 +251,47 @@ function player2Check()
   if(sqr1 == " O " && sqr2 == " O " && sqr3 == " O ")
   {
     alert("Player 2 wins!")
-    reset()
+    reset1()
   } 
   else if(sqr4 == " O " && sqr5 == " O " && sqr6 == " O ")
   {
     alert("Player 2 wins!")
-    reset()
+    reset1()
   } 
   else if(sqr7 == " O " && sqr8 == " O " && sqr9 == " O ")
   {
     alert("Player 2 wins!")
-    reset()
+    reset1()
   }
   else if(sqr1 == " O " && sqr5 == " O " && sqr9 == " O ")
   {
     alert("Player 2 wins!")
-    reset()
+    reset1()
   }
   else if(sqr1 == " O " && sqr4 == " O " && sqr7 == " O ")
   {
     alert("Player 2 wins!")
-    reset()
+    reset1()
   }
   else if(sqr2 == " O " && sqr5 == " O " && sqr8 == " O ")
   {
     alert("Player 2 wins!")
-    reset()
+    reset1()
   }
   else if(sqr3 == " O " && sqr6 == " O " && sqr9 == " O ")
   {
     alert("Player 2 wins!")
-    reset()
+    reset1()
   }
   else if(sqr1 == " O " && sqr5 == " O " && sqr9 == " O ")
   {
     alert("Player 2 wins!")
-    reset()
+    reset1()
   }
   else if(sqr3 == " O " && sqr5 == " O " && sqr7 == " O ")
   {
     alert("Player 2 wins!")
-    reset()
+    reset1()
   }
 }
 
@@ -299,7 +302,7 @@ function drawCheck()
   moveCount = sqr1T + sqr2T + sqr3T + sqr4T + sqr5T + sqr6T + sqr7T + sqr8T + sqr9T 
   if(moveCount == 9)
   {
-//    reset()
+//    reset1()
 //    alert("Draw") 
 	  endGame(status)
   }
@@ -684,7 +687,7 @@ function AI()
   check2()
 }
 
-function reset()
+function reset1()
 {
   document.tic.sqr1.value = "     "
   document.tic.sqr2.value = "     "
@@ -711,5 +714,5 @@ function reset()
 
 function resetter()
 {
-  reset()
+  reset1()
 }

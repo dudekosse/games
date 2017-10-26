@@ -59,4 +59,8 @@ public class UserService {
 		return userrepository.getUser(username);
 	}
 	
+	public int selectGoldCoins(String username) {
+		return userrepository.selectGoldCoins(username);
+	}
+	
 }
